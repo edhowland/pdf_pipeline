@@ -35,7 +35,16 @@ PDF to work from.
 
 ### Disadvantages
 
-This is only a programatically method. Only a Ruby programmer can maintain it. Possiblyusing the boiler template approach will help here.
+ This is only a programatically method. Only a Ruby programmer can maintain it. Possiblyusing the boiler template approach will help here.
+
+## HTML to PDF
+
+There a variety of HTML to PDF converters. Many of these were written to provide 
+a PDF view of some website. E.g. Download this page as a PDF.
+So a few of them integrate into Rails or Rack as middleware. Might be useful if we have a Sinatra back end.
+Here I am only looking at pure Ruby (or NodeJS) varients.
+
+
 
 ## Links
 
