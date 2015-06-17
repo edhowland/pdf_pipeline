@@ -25,6 +25,8 @@ dependancies.
 This is most straightforward path to goal. This gem allows you write the actual
 PDF in a high level method. It allows for headers, footers and repeating elements.
 
+Ref: 1
+
 ### Advantages
 
 Least number of dependancies. Only one ruby program is needed. Eg. require both the sqlite and prawn gems and
@@ -34,3 +36,8 @@ PDF to work from.
 ### Disadvantages
 
 This is only a programatically method. Only a Ruby programmer can maintain it. Possiblyusing the boiler template approach will help here.
+
+## Links
+
+1. [Prawn Homepage](http://prawnpdf.org/api-docs/2.0/)
+
