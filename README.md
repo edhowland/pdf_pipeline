@@ -44,9 +44,26 @@ a PDF view of some website. E.g. Download this page as a PDF.
 So a few of them integrate into Rails or Rack as middleware. Might be useful if we have a Sinatra back end.
 Here I am only looking at pure Ruby (or NodeJS) varients.
 
+### pdfkit
 
+This a pure Ruby Gem. It can take HTML source with possible CSS sourceses and convert to PDF.
+
+Ref: 2
+
+#### Advatanges
+
+Since there are plenty ofways to generate HTML from a data source, this 
+path seems straightforward. Using CSS to provide the presentation layeris a 
+easily understood. Plenty of Graphical tools exist to create the HTMLand CS input.
+And you get both a Web view and PDF (printable) format.
+
+#### Disadvantages
+
+There are more artifacts in this approach. You need: Data source to HTML engine (ERb, etc.)
+A CSS file and tweeked to create the correct PDF format.  A web view CSS will not always work for printable output.
 
 ## Links
 
 1. [Prawn Homepage](http://prawnpdf.org/api-docs/2.0/)
+2. {Pdfkit Homepage}(https://github.com/pdfkit/pdfkit)
 
