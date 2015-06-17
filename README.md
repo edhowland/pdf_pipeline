@@ -62,8 +62,24 @@ And you get both a Web view and PDF (printable) format.
 There are more artifacts in this approach. You need: Data source to HTML engine (ERb, etc.)
 A CSS file and tweeked to create the correct PDF format.  A web view CSS will not always work for printable output.
 
+### NodeJS converter
+
+This uses some other Node tools to accomplish this method.
+
+Ref: 3
+
+#### Advantages
+
+This a scalable solution that employs a number of workers to handle concurrent jobs.
+If the Web framework gets very busy handling HTML to PDF streams, this might be appropos solution.
+
+#### Disadvantages
+
+It requires A Node.js framework. Not sure how will this integrate into an otherwide Ruby, Sinatra platform.
+
 ## Links
 
 1. [Prawn Homepage](http://prawnpdf.org/api-docs/2.0/)
 2. {Pdfkit Homepage}(https://github.com/pdfkit/pdfkit)
+3. [NodeJS Html to PDF homepage](https://www.npmjs.com/package/phantom-html-to-pdf)
 
