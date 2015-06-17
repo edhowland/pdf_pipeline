@@ -11,7 +11,7 @@ I am only examining these based on Ruby or NodeJS to reduce
 dependancies.
 
 1. DStraight to PDF
-2.HTML to PDF
+2. HTML to PDF
 3. Markdown to HTML to PDF
 4. Sqlite to Markdown, HTML
 5. Sample code snippets
