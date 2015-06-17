@@ -17,3 +17,20 @@ dependancies.
 5. Sample code snippets
 6. Links to projects
  
+
+## Straight to PDF
+
+### Using the prawn Ruby Gem
+
+This is most straightforward path to goal. This gem allows you write the actual
+PDF in a high level method. It allows for headers, footers and repeating elements.
+
+### Advantages
+
+Least number of dependancies. Only one ruby program is needed. Eg. require both the sqlite and prawn gems and
+iterate the records and output the to PDF. I think it also can import a boilerplate
+PDF to work from.
+
+### Disadvantages
+
+This is only a programatically method. Only a Ruby programmer can maintain it. Possiblyusing the boiler template approach will help here.
