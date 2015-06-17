@@ -75,11 +75,27 @@ If the Web framework gets very busy handling HTML to PDF streams, this might be 
 
 #### Disadvantages
 
+o
+
+### Shell tools
+
+This a shell tool to generate PDF from HTML. There are Rails plugin gems to wrap around it.
+
+
+Ref: 4
 It requires A Node.js framework. Not sure how will this integrate into an otherwide Ruby, Sinatra platform.
+
+## Markdown to HTML to PDF
+
+This is essentially using 2 intermediate formats:MD and HTML.. All the points regarding the HTML to PDF also apply.
+
+
+
 
 ## Links
 
 1. [Prawn Homepage](http://prawnpdf.org/api-docs/2.0/)
 2. {Pdfkit Homepage}(https://github.com/pdfkit/pdfkit)
 3. [NodeJS Html to PDF homepage](https://www.npmjs.com/package/phantom-html-to-pdf)
+4. [Shell HTML to PDF](http://wkhtmltopdf.org)
 
