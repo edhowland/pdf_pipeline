@@ -20,5 +20,6 @@ markdown do
   h2 'Heading 2 : Code'
 
   ordered_list 'item 1', 'item 2', 'item 3'
+  bullets 'Item A', 'Item B', 'Item C'
   code 'Some code here'
 end

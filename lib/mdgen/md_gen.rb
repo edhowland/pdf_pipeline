@@ -26,6 +26,10 @@ def text string
     @codes << [:ol, list]
   end
 
+  def bullets *list
+      @codes << [:ul, list]
+  end
+
 def process(&blk)
     self.instance_exec &blk
   end  
