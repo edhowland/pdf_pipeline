@@ -31,9 +31,17 @@ class MdKit
   def text string
     puts string
   end
+
+  def a title, url
+    print "[#{title}](#{url})"
+  end
   def render codes
     codes.each do |e|
-      self.send e[0], e[1]
+      if e[0] == :a
+      a(e[1], e[2])
+    else
+        self.send e[0], e[1]
+    end
       puts
     end
   end

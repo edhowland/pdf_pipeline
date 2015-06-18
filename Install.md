@@ -8,7 +8,7 @@
 
 ## Gems
 
-Gems used are:  sqlite3
+Gems used are:  sqlite3, redcarpet
 Managed by Bundler in ./Gemfile
 
 ```
@@ -29,3 +29,9 @@ It contains one table : patients with a single column : name.
   $
 ```
 
+
+You can create HTML from any markdown (*.md) by using the redcarpet executable.
+
+```
+  $ redcarpet Install.md > Install.html
+```

@@ -30,6 +30,10 @@ def text string
       @codes << [:ul, list]
   end
 
+  def link title, url
+    @codes << [:a, title, url]
+  end
+
 def process(&blk)
     self.instance_exec &blk
   end  
