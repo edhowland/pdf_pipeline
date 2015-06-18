@@ -4,9 +4,10 @@ require 'sqlite3'
 
 
 # return names from patients table as array of strings
-def patients_names
+# pass path to sqlite db file
+def patients_names dbpath
   begin
-  db = SQLite3::Database.open '../../db/test.db'
+  db = SQLite3::Database.open dbpath
 
     rs = db.execute 'SELECT name FROM patients'
   rescue => err

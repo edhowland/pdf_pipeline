@@ -1,6 +1,6 @@
 # myfile.rb - generate markdown from dsl
 
-require './markdown'
+require '../mdgen'
 
 # test code
 markdown do

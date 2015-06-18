@@ -23,6 +23,7 @@ def text string
   end
 
   def ordered_list(*list)
+  list = list[0] if list[0].instance_of? Array
     @codes << [:ol, list]
   end
 
