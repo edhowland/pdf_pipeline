@@ -14,3 +14,18 @@ Managed by Bundler in ./Gemfile
 ```
   $ bundle
 ```
+
+
+## Database
+
+The test database is in db/test.db - a Sqlite database.
+It contains one table : patients with a single column : name.
+
+```
+  $ cd db
+  $ sqlite3 test.db
+  >> select name from patients;
+  ^D
+  $
+```
+
