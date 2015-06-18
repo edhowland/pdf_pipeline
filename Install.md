@@ -4,7 +4,13 @@
 
 ```
   $ sudo apt-get install sqlite3 libsqlite3-dev
+
+  sudo apt-get install wkhtmltopdf
+   sudo apt-get install xvfb
+
 ```
+
+You will need to use ./bin/wkpdf.sh wrapper to convert from html to pdf.
 
 ## Gems
 
