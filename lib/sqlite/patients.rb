@@ -2,10 +2,15 @@
 
 require 'sqlite3'
 
-db = SQLite3::Database.open '../../db/test.db'
 
 begin
-  puts db.get_first_value('SELECT * FROM patients')
+db = SQLite3::Database.open '../../db/test.db'
+
+  rs = db.execute 'SELECT name FROM patients'
+  puts ' Nmae'
+  rs.each do |row|
+    puts row[0]
+  end
 rescue => err
   puts err.message
   ensure
