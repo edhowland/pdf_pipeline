@@ -17,6 +17,13 @@ class MdKit
   end
 
 
+  def ol list
+    list.each_with_index do |e, i|
+      puts "#{i+1}. #{e}"
+    end
+  end
+
+
   def text string
     puts string
   end
