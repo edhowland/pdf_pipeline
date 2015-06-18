@@ -3,17 +3,18 @@
 require 'sqlite3'
 
 
-begin
-db = SQLite3::Database.open '../../db/test.db'
+# return names from patients table as array of strings
+def patients_names
+  begin
+  db = SQLite3::Database.open '../../db/test.db'
 
-  rs = db.execute 'SELECT name FROM patients'
-  puts ' Nmae'
-  rs.each do |row|
-    puts row[0]
+    rs = db.execute 'SELECT name FROM patients'
+  rescue => err
+    puts err.message
+    ensure
+    db.close
   end
-rescue => err
-  puts err.message
-  ensure
-  db.close
+
+  rs
 end
 
