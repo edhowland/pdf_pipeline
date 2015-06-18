@@ -18,5 +18,7 @@ markdown do
   h1 'Heading 1'
   text 'Lines of text... end of text'
   h2 'Heading 2 : Code'
+
+  ordered_list 'item 1', 'item 2', 'item 3'
   code 'Some code here'
 end

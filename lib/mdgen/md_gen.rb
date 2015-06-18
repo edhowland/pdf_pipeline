@@ -22,7 +22,7 @@ def text string
     @codes << [:text, string]
   end
 
-  def ordered_list(list=[])
+  def ordered_list(*list)
     @codes << [:ol, list]
   end
 
