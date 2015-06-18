@@ -111,6 +111,15 @@ It requires A Node.js framework. Not sure how will this integrate into an otherw
 
 This is essentially using 2 intermediate formats:MD and HTML.. All the points regarding the HTML to PDF also apply.
 
+## SQLite to Markdown, HTML
+
+There are an unlimited mehods to extract data from a data source as SQLite and format HTML. This 
+is the mahor workhorse of most Web frameworks.
+Some of these like ERb (Embedded Ruby) can be embedded in any text format, such as MD.
+
+### ERb
+
+
 
 
 

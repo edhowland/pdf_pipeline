@@ -1,0 +1,14 @@
+# PATIENT REPORT
+
+<%= Time.now %>
+
+## Patients Names
+
+<% @names = patients_names('../db/test.db').map {|e| e[0]}
+      @names.each do |name| %>
+- <%= name %>
+  <% end %> 
+## Footer
+
+Copyright 2015, Me
+
