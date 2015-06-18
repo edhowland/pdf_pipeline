@@ -22,6 +22,10 @@ def text string
     @codes << [:text, string]
   end
 
+  def ordered_list(list=[])
+    @codes << [:ol, list]
+  end
+
 def process(&blk)
     self.instance_exec &blk
   end  
