@@ -27,15 +27,34 @@ PDF in a high level method. It allows for headers, footers and repeating element
 
 Ref: 1
 
-### Advantages
+#### Advantages
 
 Least number of dependancies. Only one ruby program is needed. Eg. require both the sqlite and prawn gems and
 iterate the records and output the to PDF. I think it also can import a boilerplate
 PDF to work from.
 
-### Disadvantages
+#### Disadvantages
 
  This is only a programatically method. Only a Ruby programmer can maintain it. Possiblyusing the boiler template approach will help here.
+
+
+### Ruport
+
+This a complete reporting framework supplied as Ruby gem. It can oconnect a variety of data sources such .csv, SQL etc. It can generate output in a variety of media types:
+PDF, HTML etc.
+
+Ref: 5
+
+
+#### Advantages
+
+Can be used to create reports with heads, sub-heads and iterate over records from a data source. Can generate bothe pdf and html.
+
+#### Disadvantages
+
+Not sure how well maintained this is. Deppends PDF::Writer which not
+maintained since 2005.
+
 
 ## HTML to PDF
 
@@ -47,6 +66,9 @@ Here I am only looking at pure Ruby (or NodeJS) varients.
 ### pdfkit
 
 This a pure Ruby Gem. It can take HTML source with possible CSS sourceses and convert to PDF.
+
+
+It requires wkhtmltopdf package, which I suspect is needed by the NodJS library as well.
 
 Ref: 2
 
@@ -61,6 +83,7 @@ And you get both a Web view and PDF (printable) format.
 
 There are more artifacts in this approach. You need: Data source to HTML engine (ERb, etc.)
 A CSS file and tweeked to create the correct PDF format.  A web view CSS will not always work for printable output.
+It requires 'wkhtmltopdf' which also requires an X11 virtual server and complicated to setup.
 
 ### NodeJS converter
 
@@ -75,7 +98,6 @@ If the Web framework gets very busy handling HTML to PDF streams, this might be 
 
 #### Disadvantages
 
-o
 
 ### Shell tools
 
@@ -98,4 +120,5 @@ This is essentially using 2 intermediate formats:MD and HTML.. All the points re
 2. {Pdfkit Homepage}(https://github.com/pdfkit/pdfkit)
 3. [NodeJS Html to PDF homepage](https://www.npmjs.com/package/phantom-html-to-pdf)
 4. [Shell HTML to PDF](http://wkhtmltopdf.org)
+5. [Ruport](https://github.com/ruport/ruport)
 
