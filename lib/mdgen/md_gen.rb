@@ -25,4 +25,10 @@ def text string
 def process(&blk)
     self.instance_exec &blk
   end  
+
+  # render the output as proper markdown
+  # pass a renderer
+  def render kit
+    kit.render @codes
+  end
 end
