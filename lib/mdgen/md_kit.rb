@@ -21,6 +21,9 @@ class MdKit
     puts string
   end
   def render codes
-
+    codes.each do |e|
+      self.send e[0], e[1]
+      puts
+    end
   end
 end
