@@ -22,10 +22,9 @@ class MdKit
     end
   end
 
-
   def ul list
     list.each do |e|
-      puts "+#{e}"
+      puts "- #{e}"
     end
   end
 
