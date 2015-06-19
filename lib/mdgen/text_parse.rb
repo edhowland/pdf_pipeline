@@ -1,7 +1,9 @@
-
 # text_parse.rb - class TextParse
 
 class TextParse
+  def initialize
+    @keywords = ['ital']
+  end
   def lexer string
   string.split(/[\[\]]/)
   end
@@ -10,7 +12,7 @@ class TextParse
   def chunker arr
     arr.map do |e|
       chunk = e.split(' ')
-      if chunk[0] == 'ital'
+      if @keywords.member? chunk[0]
       [:ital, chunk[1..(-1)].join(' ')]
       else
         [:t, e]
