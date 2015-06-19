@@ -133,6 +133,22 @@ Graphical tools can be used to work on HTML files with ERb embedded inside.
 
 ERb can be inwieldy. There are many attempts to improve it and/or replace it.
 Requires a Ruby developer to update.
+### Jinja
+
+Jinja is Python templating engine.
+
+Ref: 6
+
+#### Advantages
+
+Jinja seems to be full featured templating engine. It has
+sandboxes for security and escape moded for anti- XSS issues.
+
+#### Disadvantages
+
+It is for Python. It seems to not follow the indenting block style of Python.
+Not sure of advantages over WEb.
+
 
 
 
@@ -145,4 +161,5 @@ Requires a Ruby developer to update.
 3. [NodeJS Html to PDF homepage](https://www.npmjs.com/package/phantom-html-to-pdf)
 4. [Shell HTML to PDF](http://wkhtmltopdf.org)
 5. [Ruport](https://github.com/ruport/ruport)
+6. [inja](http://jinja.pocoo.org)
 
