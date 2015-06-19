@@ -43,7 +43,7 @@ describe TextParse do
   describe 'lexer "[bold hellow world]"' do
     subject { @p.lexer '[bold hello world]' }
 
-    specify { subject.must_equal ['bold hellow world'] }
+    specify { subject.must_equal ['bold hello world'] }
 
   end
 
@@ -110,9 +110,9 @@ describe TextParse do
 
   specify { subject.must_equal [
       [:bold, 'ab'],
-      [:t, 'def'],
+      [:t, ' def '],
       [:ital, 'ghi'],
-      [:t, 'jkl']
+      [:t, ' jkl']
   ] }
 
   end

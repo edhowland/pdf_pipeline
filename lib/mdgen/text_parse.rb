@@ -5,7 +5,7 @@ class TextParse
     @keywords = ['ital', 'bold']
   end
   def lexer string
-  string.split(/[\[\]]/)
+  string.split(/[\[\]]/).select {|e| !e.empty? }
   end
 
   # chunks array into array of 2 element arrays : ['ab'] => [[:t, 'ab']]
