@@ -104,7 +104,9 @@ describe TextParse do
 
   specify { subject.must_equal [
       [:bold, 'ab'],
-      [:t, 'def']
+      [:t, 'def'],
+      [:ital, 'ghi'],
+      [:t, 'jkl']
   ] }
 
   end
