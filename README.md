@@ -119,6 +119,21 @@ Some of these like ERb (Embedded Ruby) can be embedded in any text format, such 
 
 ### ERb
 
+Embedded Ruby (ERb) is simple templating engine that can be used with nearly any text format. The ruby statements are embedded via <% ... %> bits. 
+See the ./erb for examples.
+
+#### Advantages
+
+ERb is built-in to standard Ruby.
+ERb can be used in Markdown or directly in HTML.
+ERb is familiar to most Rails developers. 
+Graphical tools can be used to work on HTML files with ERb embedded inside.
+
+#### Disadvantages
+
+ERb can be inwieldy. There are many attempts to improve it and/or replace it.
+Requires a Ruby developer to update.
+
 
 
 
