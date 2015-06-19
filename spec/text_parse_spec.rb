@@ -1,7 +1,7 @@
 # text_parse_spec.rb - specs for TextParse
 
 
-require '../lib/mdgen/text_parse'
+require '../lib/mdgen'
 require 'minitest/autorun'
 
 describe TextParse do
