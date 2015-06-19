@@ -39,5 +39,16 @@ describe TextParse do
       @actual.must_equal ['abc ', 'ital def', ' ghi']
   end
   end
+
+
+  describe 'chunker []' do
+    before do
+      @actual = @p.chuncker []
+    end
+
+    it 'should be []' do
+      @actual.must_equal []
+    end
+  end
 end
 

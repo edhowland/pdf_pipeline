@@ -5,4 +5,7 @@ class TextParse
   string.split(/[\[\]]/)
   end
 
+  def chuncker arr
+    []
+  end
 end
