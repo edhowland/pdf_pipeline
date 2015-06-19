@@ -1,3 +1,4 @@
+
 # text_parse.rb - class TextParse
 
 class TextParse
@@ -5,9 +6,12 @@ class TextParse
   string.split(/[\[\]]/)
   end
 
+  # chunks array into array of 2 element arrays : ['ab'] => [[:t, 'ab']]
   def chunker arr
     arr.map do |e|
-      if e.split(' ')[0] == 'ital'
+      chunk = e.split(' ')
+      if chunk[0] == 'ital'
+      [:ital, chunk[1..(-1)].join(' ')]
       else
         [:t, e]
       end

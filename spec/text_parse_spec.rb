@@ -72,5 +72,15 @@ describe TextParse do
       @actual.must_equal [[:t, 'abc'], [:t, 'def']]
     end
   end
+
+  describe "chunker ['abc ', 'ital def', ' ghi']" do
+    before do
+      @actual = @p.chunker ['abc ', 'ital def', ' ghi']
+    end
+
+    it "should be [[:t, 'abc '], [:ital, 'def'], [:t, ' ghi']]" do
+      @actual.must_equal [[:t, 'abc '], [:ital, 'def'], [:t, ' ghi']]
+    end
+  end
 end
 
