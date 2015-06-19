@@ -149,10 +149,46 @@ sandboxes for security and escape moded for anti- XSS issues.
 It is for Python. It seems to not follow the indenting block style of Python.
 Not sure of advantages over WEb.
 
+### HAML
 
+HAML is replacement for ERb and is popular in many Rails shops. It is simpler and based on the python indent style of nested elements.
 
+#### Advantages
+Same as ERb but simpler syntax
+#### Disadvantages
 
+It may only work with HTML output. Not necessary 
+good for Markdown.
 
+## Sample Code Snippets
+
+### MdGen
+
+MdGen is very simple templating engine. It creates markdown based a Ruby DSL. It is split into two parts. The bytecode compiler converts DSL code with general
+Ruby statements and markdown primatives. The bytecode interpreter outputs markdown. Currently, it only supports GFM (Github Flavored Markdown).
+But other flavors can be easily impleted.
+The code is in ./lib/mdgen.
+Sample code that uses is in ./data2md. This reads names from the patients table in SQLite in ./db/test.db
+and formats a markdown: patients.md which can be converted to 
+HTML bia 
+
+```
+  $ redcarpet patients.md > patients.html
+```
+
+This van be furthewr converted via ./bin/wkpdf.sh:
+
+```
+  $ ./bin/wkpdf.sh patients.html patients.pdf
+```
+
+### ERb
+
+The sample code for ERB is./erb
+
+### SQLite code
+
+The code for SQLite is in ./lib/sqlite/
 
 ## Links
 
@@ -162,4 +198,5 @@ Not sure of advantages over WEb.
 4. [Shell HTML to PDF](http://wkhtmltopdf.org)
 5. [Ruport](https://github.com/ruport/ruport)
 6. [inja](http://jinja.pocoo.org)
+7. [HAML](http://haml.info)
 
