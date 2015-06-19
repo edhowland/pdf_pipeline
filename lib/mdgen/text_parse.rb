@@ -2,7 +2,7 @@
 
 class TextParse
   def lexer string
-    []
+    string.bytes
   end
 
 end
