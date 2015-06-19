@@ -103,10 +103,9 @@ describe TextParse do
     subject { @p.parser '[bold ab] def [ital ghi] jkl' }
 
   specify { subject.must_equal [
-
-  ]
-
-    }
+      [:bold, 'ab'],
+      [:t, 'def']
+  ] }
 
   end
 end
