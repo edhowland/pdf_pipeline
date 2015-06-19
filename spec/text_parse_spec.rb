@@ -43,11 +43,33 @@ describe TextParse do
 
   describe 'chunker []' do
     before do
-      @actual = @p.chuncker []
+      @actual = @p.chunker []
     end
 
     it 'should be []' do
       @actual.must_equal []
+    end
+  end
+
+
+  describe "chunker ['abc']" do
+    before do
+      @actual = @p.chunker ['abc']
+    end
+
+    it "should be  [[:t, 'abc']]" do
+      @actual.must_equal [[:t, 'abc']]
+    end
+  end
+
+
+  describe "chunker ['abc', 'def']" do
+    before do
+      @actual = @p.chunker ['abc', 'def']
+    end
+
+    it "should be [[:t, 'abc'], [:t, 'def']]" do
+      @actual.must_equal [[:t, 'abc'], [:t, 'def']]
     end
   end
 end

@@ -5,7 +5,12 @@ class TextParse
   string.split(/[\[\]]/)
   end
 
-  def chuncker arr
-    []
+  def chunker arr
+    arr.map do |e|
+      if e.split(' ')[0] == 'ital'
+      else
+        [:t, e]
+      end
+    end
   end
 end
