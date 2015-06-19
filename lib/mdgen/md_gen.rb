@@ -22,6 +22,8 @@ def text string
     @codes << [:text, string]
   end
 
+  alias_method :para, :text
+
   def ordered_list(*list)
   list = list[0] if list[0].instance_of? Array
     @codes << [:ol, list]

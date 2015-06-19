@@ -9,7 +9,7 @@ describe MdGen do
 
   describe '' do
     before do
-      @m.process { text 'this is regular text' }
+      @m.process { para 'this is regular text' }
     end
 
     subject { @m.codes }
