@@ -97,4 +97,16 @@ describe TextParse do
     subject { @p.parser 'abc [bold def] ghi jkl' }
     specify { subject.must_equal [[:t, 'abc '], [:bold, 'def'], [:t, ' ghi jkl']] }
   end
+
+
+  descrribe 'parser "[bold ab] def [ital ghi] jkl"' do
+    subject { @p.parser '[bold ab] def [ital ghi] jkl' }
+
+  specify { subject.must_equal [
+
+  ]
+
+    }
+
+  end
 end
