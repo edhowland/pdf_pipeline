@@ -29,4 +29,15 @@ describe TextParse do
       @actual.must_equal ['1234']
     end
   end
+
+
+  describe 'lexer "abcd [ital def] ghi"' do
+    before do
+      @actual = @p.lexer 'abc [ital def] ghi'
+    end
+    it 'should be ["abc ", "ital def", "ghi"' do
+      @actual.must_equal ['abc ', 'ital def', ' ghi']
+  end
+  end
 end
+
