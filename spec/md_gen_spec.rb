@@ -7,7 +7,7 @@ require 'minitest/autorun'
 describe MdGen do
   before { @m = MdGen.new }
 
-  describe '' do
+  describe 'simple paragraph element' do
     before do
       @m.process { para 'this is regular text' }
     end
