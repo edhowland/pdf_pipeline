@@ -13,7 +13,7 @@ class TextParse
     arr.map do |e|
       chunk = e.split(' ')
       if @keywords.member? chunk[0]
-      [:ital, chunk[1..(-1)].join(' ')]
+      [chunk[0].to_sym, chunk[1..(-1)].join(' ')]
       else
         [:t, e]
       end
