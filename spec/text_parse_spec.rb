@@ -40,6 +40,12 @@ describe TextParse do
   end
   end
 
+  describe 'lexer "[bold hellow world]"' do
+    subject { @p.lexer '[bold hello world]' }
+
+    specify { subject.must_equal ['bold hellow world'] }
+
+  end
 
   describe 'chunker []' do
     before do
@@ -99,7 +105,7 @@ describe TextParse do
   end
 
 
-  descrribe 'parser "[bold ab] def [ital ghi] jkl"' do
+  describe 'parser "[bold ab] def [ital ghi] jkl"' do
     subject { @p.parser '[bold ab] def [ital ghi] jkl' }
 
   specify { subject.must_equal [
