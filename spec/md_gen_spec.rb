@@ -8,11 +8,12 @@ describe MdGen do
   before { @m = MdGen.new }
 
   describe '' do
-
     before do
-      @m.process do
-
-      end
+      @m.process { text 'this is regular text' }
     end
+
+    subject { @m.codes }
+
+    specify { subject.must_equal [[:text, 'this is regular text']]}
   end
 end
