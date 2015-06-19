@@ -9,5 +9,10 @@ describe MdGen do
 
   describe '' do
 
+    before do
+      @m.process do
+
+      end
+    end
   end
 end
