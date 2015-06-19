@@ -92,4 +92,9 @@ describe TextParse do
       @actual.must_equal [[:t, 'abcdef'], [:bold, 'ghi']]
     end
   end
+
+  describe 'parser "abc [bold def] ghi jkl"' do
+    subject { @p.parser 'abc [bold def] ghi jkl' }
+    specify { subject.must_equal [[:t, 'abc '], [:bold, 'def'], [:t, ' ghi jkl']] }
+  end
 end

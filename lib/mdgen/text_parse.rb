@@ -19,4 +19,8 @@ class TextParse
       end
     end
   end
+  
+  def parser string
+    chunker lexer(string)
+  end
 end
