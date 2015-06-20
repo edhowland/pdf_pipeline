@@ -39,5 +39,6 @@ describe GfmRender do
         [:t, ' brown fox']
       ]]] }
 
+    specify {subject.must_equal "the **quick** brown fox\n" }
   end
 end
