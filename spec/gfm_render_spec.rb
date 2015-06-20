@@ -10,7 +10,12 @@ describe GfmRender do
     subject { @r.render [] }
 
     specify { subject.must_equal '' }
+  end
 
+  describe 'single code code' do
+    subject { @r.render [[:code, '']] }
+
+    specify { subject.must_equal "\n" }
   end
 
 end
