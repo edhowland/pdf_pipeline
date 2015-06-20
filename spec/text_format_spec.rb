@@ -33,6 +33,12 @@ describe TextFormat do
   end
 
   describe 'complicated input with text, bold and itlics' do
-    subject { @f.format [[:t, 'Now is the ']]}
+    subject { @f.format [[:t, 'Now is the '],
+        [:ital, 'time'],
+        [:t, ' for all good '],
+        [:bold, 'Men']
+]}
+
+    specify { subject.must_equal 'Now is the *time* for all good **Men**' }
   end
 end
