@@ -26,7 +26,7 @@ describe GfmRender do
 
 
   describe 'two elemnts : code, text' do
-    subject { @r.render [[:code, 'code'], [:text, 'text']] }
+    subject { @r.render [[:code, 'code'], [:para, 'text']] }
 
     specify { subject.must_equal "code\ntext\n" }
   end
