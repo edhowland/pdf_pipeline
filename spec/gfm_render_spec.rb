@@ -7,6 +7,9 @@ describe GfmRender do
   before { @r = GfmRender.new }
 
   describe 'render empty codes' do
+    subject { @r.render [] }
+
+    specify { subject.must_equal '' }
 
   end
 
