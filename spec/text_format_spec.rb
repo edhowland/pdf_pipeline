@@ -10,6 +10,12 @@ describe TextFormat do
     subject { @f.format [] }
 
     specify { subject.must_equal '' }
+  end
+
+  describe "format [[:t, 'text']]" do
+    subject { @f.format [[:t, 'text']] }
+
+    specify { subject.must_equal 'text' }
 
   end
 end
