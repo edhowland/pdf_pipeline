@@ -23,4 +23,6 @@ class TextParse
   def parser string
     chunker lexer(string)
   end
+
+  alias_method :parse, :parser
 end
