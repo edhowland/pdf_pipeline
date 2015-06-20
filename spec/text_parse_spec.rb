@@ -99,14 +99,14 @@ describe TextParse do
     end
   end
 
-  describe 'parser "abc [bold def] ghi jkl"' do
-    subject { @p.parser 'abc [bold def] ghi jkl' }
+  describe 'parse "abc [bold def] ghi jkl"' do
+    subject { @p.parse 'abc [bold def] ghi jkl' }
     specify { subject.must_equal [[:t, 'abc '], [:bold, 'def'], [:t, ' ghi jkl']] }
   end
 
 
-  describe 'parser "[bold ab] def [ital ghi] jkl"' do
-    subject { @p.parser '[bold ab] def [ital ghi] jkl' }
+  describe 'parse "[bold ab] def [ital ghi] jkl"' do
+    subject { @p.parse '[bold ab] def [ital ghi] jkl' }
 
   specify { subject.must_equal [
       [:bold, 'ab'],
