@@ -27,4 +27,11 @@ describe 'Format a Parsed input string' do
     specify { subject.must_equal 'this is **bold** text' }
   end
 
+  describe 'really complicated example' do
+    subject { @f.format @p.parse('[bold ATTENTION]! Now hear [ital this]') }
+
+  specify { subject.must_equal '**ATTENTION**! Now hear *this*' }
+
+  end
+
 end
