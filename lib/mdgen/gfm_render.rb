@@ -1,9 +1,12 @@
 # gfm_render.rb - class GfmRender
 
 class GfmRender
+  def initialize
+    @formatter = TextFormat.new
+  end
 
-  def para string
-    string
+  def para arr
+    @formatter.format arr
   end
 
   def code string
