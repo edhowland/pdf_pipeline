@@ -5,6 +5,10 @@ class TextFormat
     string
   end
 
+  def ital string
+    "*#{string}*"
+  end
+
   def bold string
     "**#{string}**"
   end

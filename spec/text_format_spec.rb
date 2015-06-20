@@ -25,4 +25,10 @@ describe TextFormat do
 
     specify { subject.must_equal '**text**' }
   end
+
+  describe "format [[:ital some words']]" do
+    subject {@f.format [[:ital, 'some words']] }
+
+    specify { subject.must_equal '*some words*' }
+  end
 end
