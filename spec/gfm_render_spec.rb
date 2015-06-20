@@ -30,4 +30,14 @@ describe GfmRender do
 
     specify { subject.must_equal "code\ntext\n" }
   end
+
+
+  describe 'one complicated paragraph' do
+    subject { @r.render [[:para, 
+      [[:t, 'the '],
+       [:bold, 'quick'], 
+        [:t, ' brown fox']
+      ]]] }
+
+  end
 end
