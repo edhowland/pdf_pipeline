@@ -20,9 +20,8 @@ class TextParse
     end
   end
   
-  def parser string
+  def parse string
     chunker lexer(string)
   end
 
-  alias_method :parse, :parser
 end
