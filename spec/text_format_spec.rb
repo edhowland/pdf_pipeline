@@ -31,4 +31,8 @@ describe TextFormat do
 
     specify { subject.must_equal '*some words*' }
   end
+
+  describe 'complicated input with text, bold and itlics' do
+    subject { @f.format [[:t, 'Now is the ']]}
+  end
 end
