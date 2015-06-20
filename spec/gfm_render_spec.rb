@@ -23,4 +23,11 @@ describe GfmRender do
 
     specify { subject.must_equal "text\n" }
   end
+
+
+  describe 'two elemnts : code, text' do
+    subject { @r.render [[:code, 'code'], [:text, 'text']] }
+
+    specify { subject.must_equal "code\ntext\n" }
+  end
 end
