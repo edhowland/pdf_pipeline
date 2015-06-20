@@ -19,7 +19,7 @@ class MdGen
   end
 
 def text string
-    @codes << [:text, string]
+    @codes << [:para, string]
   end
 
   alias_method :para, :text

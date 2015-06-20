@@ -14,18 +14,18 @@ describe MdGen do
 
     subject { @m.codes }
 
-    specify { subject.must_equal [[:text, 'this is regular text']]}
+    specify { subject.must_equal [[:para, 'this is regular text']]}
   end
 
-  describe "" do
+  describe "paragraph with bold element" do
     before { @m.process { para 'This is [bold bold] text' }}
 
     subject { @m.codes }
 
     specify { subject.must_equal [:para, [
-        [:t, 'this is'], 
+        [:t, 'this is '], 
         [:bold, 'bold'], 
-        [:t, 'text']
+        [:t, ' text']
         ]] }
 
   end
