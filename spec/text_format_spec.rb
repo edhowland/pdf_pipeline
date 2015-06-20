@@ -18,4 +18,11 @@ describe TextFormat do
     specify { subject.must_equal 'text' }
 
   end
+
+
+  describe "format [[:bold 'text']]" do
+    subject { @f.format [[:bold, 'text']] }
+
+    specify { subject.must_equal '**text**' }
+  end
 end
