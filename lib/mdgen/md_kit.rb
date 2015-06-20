@@ -28,9 +28,11 @@ class MdKit
     end
   end
 
-  def text string
+  def para string
     puts string
   end
+
+alias_method :text, :para
 
   def a title, url
     print "[#{title}](#{url})"
