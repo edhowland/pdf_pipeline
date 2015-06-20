@@ -19,7 +19,9 @@ class MdGen
   end
 
 def para string
-    @codes << [:para, string]
+  parser = TextParse.new
+  
+    @codes << [:para, parser.parser(string)]
   end
 
   alias_method :text, :para
