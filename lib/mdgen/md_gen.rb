@@ -18,11 +18,11 @@ class MdGen
     @codes << [:code, string]
   end
 
-def text string
+def para string
     @codes << [:para, string]
   end
 
-  alias_method :para, :text
+  alias_method :text, :para
 
   def ordered_list(*list)
   list = list[0] if list[0].instance_of? Array
