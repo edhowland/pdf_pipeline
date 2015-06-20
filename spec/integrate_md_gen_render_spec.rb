@@ -8,6 +8,14 @@ describe 'Integration test: MdGen, GfmRender' do
   let(:rend) { GfmRender.new }
 
   describe 'simple code element' do
-    subject { gen { code 'code' } }
+    subject { rend.render(gen.process { code 'code' }) }
+
+specify { subject.must_equal <<-EOC
+\`\`\`
+code
+\`\`\`
+
+EOC
+}
   end
 end
