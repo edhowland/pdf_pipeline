@@ -18,4 +18,9 @@ describe GfmRender do
     specify { subject.must_equal "\n" }
   end
 
+  describe 'code with text' do
+    subject { @r.render [[:code, 'text']] }
+
+    specify { subject.must_equal "text\n" }
+  end
 end
