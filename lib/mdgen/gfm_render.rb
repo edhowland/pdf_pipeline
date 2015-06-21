@@ -6,7 +6,7 @@ class GfmRender
   end
 
   def para arr
-    @formatter.format arr
+    @formatter.format(arr) + "\n"
   end
 
   def code string

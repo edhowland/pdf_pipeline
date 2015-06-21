@@ -24,11 +24,16 @@ describe GfmRender do
     specify { subject.must_equal "\`\`\`\ntext\n\`\`\`\n\n" }
   end
 
+  describe 'paragraph must be separated by blank line' do
+    subject { @r.render [[:para, [[:t, 'text']]]] }
 
+    specify { subject.must_equal "text\n\n" }
+
+  end
   describe 'two elements : code, text' do
     subject { @r.render [[:code, 'code'], [:para, [[:t, 'text']]]] }
 
-    specify { subject.must_equal "\`\`\`\ncode\n\`\`\`\n\ntext\n" }
+    specify { subject.must_equal "\`\`\`\ncode\n\`\`\`\n\ntext\n\n" }
 
   end
 
@@ -40,6 +45,6 @@ describe GfmRender do
         [:t, ' brown fox']
       ]]] }
 
-    specify {subject.must_equal "the **quick** brown fox\n" }
+    specify {subject.must_equal "the **quick** brown fox\n\n" }
   end
 end
