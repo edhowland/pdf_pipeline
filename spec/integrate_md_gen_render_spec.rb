@@ -19,6 +19,11 @@ EOC
 }
   end
 
+
+  describe 'three paragraphs' do
+    subject { rend.render gen.process { para 'text1'; para 'text2'; para 'text3' } }
+
+  end
 describe 'simple two elements: para, code' do
     subject { rend.render gen.process { para 'text'; code 'code' } } 
 
