@@ -20,12 +20,18 @@ EOC
   end
 
   describe 'text with 2 styles, code and plain text' do
+    let(:rend) {GfmRender.new}
+    let(:gen) {MdGen.new}
+    let(:expected) { 'the' }
     subject do
       rend.render(gen.process do
       para 'the quick [bold brown] fox [ital jumped] over.'
       code '$ sudo apt-get install mdgen'
-      para 'lazy dog\'s back'
+      para 'the lazy dog\'s back'
     end)
     end
+
+    specify { subject.must_equal expected }
+
   end
     end
