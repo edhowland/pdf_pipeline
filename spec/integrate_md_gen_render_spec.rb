@@ -23,6 +23,7 @@ EOC
   describe 'three paragraphs' do
     subject { rend.render gen.process { para 'text1'; para 'text2'; para 'text3' } }
 
+    specify { subject.must_equal"text1\n\ntext2\n\ntext3\n\n"  }
   end
 describe 'simple two elements: para, code' do
     subject { rend.render gen.process { para 'text'; code 'code' } } 
