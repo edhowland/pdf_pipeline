@@ -5,12 +5,16 @@ class GfmRender
     @formatter = TextFormat.new
   end
 
+  def heading count, string
+    "#{'#' * count} #{string}\n"
+  end
+
   def h1 string
-    "# #{string}\n"
+    heading 1, string
   end
 
   def h2 string
-    "## #{string}\n"
+    heading 2, string
   end
 
   def para arr
