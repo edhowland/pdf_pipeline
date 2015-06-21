@@ -19,6 +19,17 @@ EOC
 }
   end
 
+describe 'simple two elements: para, code' do
+    subject { rend.render gen.process { para 'text'; code 'code' } } 
+
+    specify { subject.must_equal "text\n\n\`\`\`\ncode\n\`\`\`\n\n" }
+  end
+
+describe 'reversed elements: code, para' do
+    subject { rend.render gen.process { code 'code'; para 'text' } }
+
+    specify {skip('extra space'); subject.must_equal "\`\`\`\ncode\n\ntext\n\n"  }
+  end
   describe 'text with 2 styles, code and plain text' do
     let(:rend) {GfmRender.new}
     let(:gen) {MdGen.new}
