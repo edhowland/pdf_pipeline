@@ -30,3 +30,12 @@ describe MdGen do
 
   end
 end
+
+describe 'MdGen: complicated examples' do
+  let(:gen) { MdGen.new }
+  describe '3 types: h1, para, code' do
+    subject { gen.process { h1 'head'; para 'text'; code 'code' }  }
+
+  specify { subject.must_equal [[:h1, 'head'], [:para, [[:t, 'text']]], [:code, 'code']] }
+  end
+end
