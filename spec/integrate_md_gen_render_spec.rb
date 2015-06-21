@@ -54,21 +54,4 @@ describe 'para, code and para' do
 
   specify { subject.must_equal "the **quick** brown *fox*\n\n\`\`\`\ncode\n\`\`\`\n\ntext\n\n" }
   end
-
-  describe 'text with 2 styles, code and plain text' do
-    let(:rend) {GfmRender.new}
-    let(:gen) {MdGen.new}
-      let(:expected) { "the quick **brown** fox *junped* over.\n\n\`\`\`\n$ sudo apt-get install mdgen\n\`\`\`\n\nthe lazy dog's back\n\n" }
-
-    subject do
-      rend.render(gen.process do
-      para 'the quick [bold brown] fox [ital jumped] over.'
-      code '$ sudo apt-get install mdgen'
-      para 'the lazy dog\'s back'
-    end)
-    end
-
-    specify {skip('bad code'); actual=subject; puts "#{expected}"; puts "#{actual}";   actual.must_equal expected }
-
-  end
     end
