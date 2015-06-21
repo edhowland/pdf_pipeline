@@ -106,4 +106,10 @@ describe 'heading 5' do
 
   specify { subject.must_equal "- a\n- b\n\n" }
   end
+
+  describe 'numbers' do
+    subject { @r.render [[:ol, ['1', '2']]] }
+
+  specify  { subject.must_equal "1. 1\n2. 2\n\n" }
+  end
 end
