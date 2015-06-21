@@ -24,10 +24,6 @@ EOC
     let(:gen) {MdGen.new}
       let(:expected) { "the quick **brown** fox *junped* over.\n\n\`\`\`\n$ sudo apt-get install mdgen\n\`\`\`\n\nthe lazy dog's back\n\n" }
 
-
-    
-
-
     subject do
       rend.render(gen.process do
       para 'the quick [bold brown] fox [ital jumped] over.'
@@ -36,7 +32,7 @@ EOC
     end)
     end
 
-    specify { subject.must_equal expected }
+    specify {actual=subject; puts "#{expected}"; puts "#{actual}";   actual.must_equal expected }
 
   end
     end
