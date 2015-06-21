@@ -38,4 +38,10 @@ describe 'MdGen: complicated examples' do
 
   specify { subject.must_equal [[:h1, 'head'], [:para, [[:t, 'text']]], [:code, 'code']] }
   end
+
+ describe 'code then para' do
+    subject { gen.process { code 'code'; para 'text' } }
+
+    specify { subject.must_equal [[:code, 'text'], [:para, [[:t, 'text']]]] }
+  end
 end
