@@ -22,7 +22,12 @@ EOC
   describe 'text with 2 styles, code and plain text' do
     let(:rend) {GfmRender.new}
     let(:gen) {MdGen.new}
-    let(:expected) { 'the' }
+      let(:expected) { "the quick **brown** fox *junped* over.\n\n\`\`\`\n$ sudo apt-get install mdgen\n\`\`\`\n\nthe lazy dog's back\n\n" }
+
+
+    
+
+
     subject do
       rend.render(gen.process do
       para 'the quick [bold brown] fox [ital jumped] over.'
