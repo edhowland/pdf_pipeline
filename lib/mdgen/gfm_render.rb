@@ -17,6 +17,22 @@ class GfmRender
     heading 2, string
   end
 
+  def h3 string
+    heading 3, string
+  end
+
+def h4 string
+    heading 4, string
+  end
+
+  def h5 string
+    heading 5, string
+  end
+
+  def h6 string
+    heading 6, string
+  end
+
   def para arr
     @formatter.format(arr) + "\n"
   end
