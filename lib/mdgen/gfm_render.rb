@@ -49,6 +49,10 @@ def ol list
     list.each_with_index.map {|e, i| "#{i+1}. #{e}" }.reduce('') {|i, j| i << "#{j}\n" }
   end
 
+  def a urlspec
+    "[#{urlspec[0]}](#{urlspec[1]})"
+  end
+
   def render codes
     codes.map {|e| self.send e[0], e[1] }.reduce('') {|i, j| i << "#{j}\n" }
   end

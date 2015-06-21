@@ -112,4 +112,10 @@ describe 'heading 5' do
 
   specify  { subject.must_equal "1. 1\n2. 2\n\n" }
   end
+
+  describe 'link' do
+    subject { @r.render [[:a, ['title', 'url']]] }
+
+  specify { subject.must_equal "[title](url)\n"  }
+  end
 end
