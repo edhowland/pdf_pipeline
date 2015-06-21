@@ -9,6 +9,10 @@ class GfmRender
     "# #{string}\n"
   end
 
+  def h2 string
+    "## #{string}\n"
+  end
+
   def para arr
     @formatter.format(arr) + "\n"
   end
