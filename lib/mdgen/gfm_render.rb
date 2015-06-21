@@ -5,6 +5,10 @@ class GfmRender
     @formatter = TextFormat.new
   end
 
+  def h1 string
+    "# #{string}\n"
+  end
+
   def para arr
     @formatter.format(arr) + "\n"
   end

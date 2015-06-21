@@ -12,6 +12,12 @@ describe GfmRender do
     specify { subject.must_equal '' }
   end
 
+describe 'heading 1' do
+    subject { @r.render [[:h1, 'head']] }
+
+    specify { subject.must_equal "# head\n\n" }
+  end
+
   describe 'single code code' do
     subject { @r.render [[:code, '']] }
 
