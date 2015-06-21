@@ -18,4 +18,14 @@ code
 EOC
 }
   end
-end
+
+  describe 'text with 2 styles, code and plain text' do
+    subject do
+      rend.render(gen.process do
+      para 'the quick [bold brown] fox [ital jumped] over.'
+      code '$ sudo apt-get install mdgen'
+      para 'lazy dog\'s back'
+    end)
+    end
+  end
+    end
