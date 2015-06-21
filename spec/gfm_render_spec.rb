@@ -82,9 +82,13 @@ describe 'heading 5' do
     subject { @r.render [[:code, 'code'], [:para, [[:t, 'text']]]] }
 
     specify { subject.must_equal "\`\`\`\ncode\n\`\`\`\n\ntext\n\n" }
-
   end
 
+  describe 'head, para and code' do
+    subject { @r.render [[:h2, 'heading'], [:para, [[:t, 'brown fox']]], [:code, 'code']] }  
+
+    specify { subject.must_equal "## heading\n\nbrown fox\n\n\`\`\`\ncode\n\`\`\`\n\n" }
+  end
 
   describe 'one complicated paragraph' do
     subject { @r.render [[:para, 
