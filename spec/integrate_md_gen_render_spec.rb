@@ -37,11 +37,12 @@ describe 'simple two elements: para, code' do
     specify { subject.must_equal "text\n\n\`\`\`\ncode\n\`\`\`\n\n" }
   end
 
-describe 'reversed elements: code, para' do
+  describe 'code then para' do
     subject { rend.render gen.process { code 'code'; para 'text' } }
 
-    specify { subject.must_equal "\`\`\`\ncode\n\ntext\n\n"  }
+  specify { subject.must_equal "\`\`\`\ncode\n\`\`\`\n\ntext\n\n" }
   end
+
   describe 'text with 2 styles, code and plain text' do
     let(:rend) {GfmRender.new}
     let(:gen) {MdGen.new}
