@@ -43,6 +43,11 @@ describe 'simple two elements: para, code' do
   specify { subject.must_equal "\`\`\`\ncode\n\`\`\`\n\ntext\n\n" }
   end
 
+describe 'para, code and para' do
+    subject { rend.render gen.process { para 'text'; code 'code'; para 'text' } }
+
+  end
+
   describe 'text with 2 styles, code and plain text' do
     let(:rend) {GfmRender.new}
     let(:gen) {MdGen.new}
