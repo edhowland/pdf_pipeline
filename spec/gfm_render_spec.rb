@@ -67,6 +67,12 @@ describe 'heading 5' do
     specify { subject.must_equal "text\n\n" }
 
   end
+
+  describe '2 headings' do
+    subject { @r.render [[:h1, 'head 1'], [:h2, 'head 2']] }
+
+  specify { subject.must_equal "# head 1\n\n## head 2\n\n" }
+  end
   describe 'two elements : code, text' do
     subject { @r.render [[:code, 'code'], [:para, [[:t, 'text']]]] }
 
