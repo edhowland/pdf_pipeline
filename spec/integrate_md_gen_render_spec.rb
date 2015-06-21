@@ -46,6 +46,11 @@ describe 'simple two elements: para, code' do
 describe 'para, code and para' do
     subject { rend.render gen.process { para 'text'; code 'code'; para 'text' } }
 
+  specify { subject.must_equal "text\n\n\`\`\`\ncode\n\`\`\`\n\ntext\n\n" }
+  end
+
+  describe 'para with bold and ital, code, para' do
+    subject { rend.render gen.process { para 'the [bold quick] brown [ital fox]'; code 'code' ; para 'text' } }  
   end
 
   describe 'text with 2 styles, code and plain text' do
