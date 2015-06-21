@@ -37,6 +37,11 @@ describe 'heading 1' do
   specify { subject.must_equal "#### head\n\n" }
   end
 
+describe 'heading 5' do
+    subject { @r.render [[:h5, 'head']] }
+
+    specify { subject.must_equal "##### head\n\n" }
+  end
   describe 'single code code' do
     subject { @r.render [[:code, '']] }
 
