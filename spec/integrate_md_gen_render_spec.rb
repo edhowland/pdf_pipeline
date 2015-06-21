@@ -25,6 +25,12 @@ EOC
 
     specify { subject.must_equal"text1\n\ntext2\n\ntext3\n\n"  }
   end
+
+  describe '2 code elements' do
+    subject { rend.render gen.process { code 'code1'; code 'code2' } }
+
+    specify { subject.must_equal "\`\`\`\ncode1\n\`\`\`\n\n\`\`\`\ncode2\n\`\`\`\n\n"  }
+  end
 describe 'simple two elements: para, code' do
     subject { rend.render gen.process { para 'text'; code 'code' } } 
 
