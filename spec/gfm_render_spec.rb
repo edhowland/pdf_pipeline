@@ -15,20 +15,21 @@ describe GfmRender do
   describe 'single code code' do
     subject { @r.render [[:code, '']] }
 
-    specify { subject.must_equal "\n" }
+    specify { subject.must_equal "\`\`\`\n\n\`\`\`\n\n" }
   end
 
   describe 'code with text' do
     subject { @r.render [[:code, 'text']] }
 
-    specify { subject.must_equal "text\n" }
+    specify { subject.must_equal "\`\`\`\ntext\n\`\`\`\n\n" }
   end
 
 
   describe 'two elements : code, text' do
     subject { @r.render [[:code, 'code'], [:para, [[:t, 'text']]]] }
 
-    specify { subject.must_equal "code\ntext\n" }
+    specify { subject.must_equal "\`\`\`\ncode\n\`\`\`\n\ntext\n" }
+
   end
 
 
