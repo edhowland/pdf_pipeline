@@ -99,4 +99,11 @@ describe 'heading 5' do
 
     specify {subject.must_equal "the **quick** brown fox\n\n" }
   end
+
+
+  describe 'bullets' do
+    subject { @r.render [[:ul, ['a', 'b']]] }
+
+  specify { subject.must_equal "- a\n- b\n\n" }
+  end
 end

@@ -40,6 +40,11 @@ def h4 string
   def code string
     "\`\`\`\n#{string}\n\`\`\`\n"
   end
+
+  def ul list
+    list.reduce('') {|i, j| i << "- #{j}\n" }
+  end
+
   def render codes
     codes.map {|e| self.send e[0], e[1] }.reduce('') {|i, j| i << "#{j}\n" }
   end
