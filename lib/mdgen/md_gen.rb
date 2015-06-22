@@ -18,14 +18,20 @@ class MdGen
     @codes << [:code, string]
   end
 
-def text string
-    @codes << [:text, string]
+def para string
+  parser = TextParse.new
+  
+    @codes << [:para, parser.parse(string)]
   end
+
+  alias_method :text, :para
 
   def ordered_list(*list)
   list = list[0] if list[0].instance_of? Array
     @codes << [:ol, list]
   end
+
+alias_method :numbers, :ordered_list
 
   def bullets *list
       @codes << [:ul, list]

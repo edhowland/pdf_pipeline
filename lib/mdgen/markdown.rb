@@ -2,12 +2,11 @@
 
 
 # the main markdown object
-def markdown &blk
-  mgen = MdGen.new
-  mkit = MdKit.new
+def markdown(r=GfmRender.new,  &blk)
+  g = MdGen.new
+  g.process &blk
 
-  mgen.process &blk
-  mgen.render mkit
+  r.render g.codes
 end
 
 
