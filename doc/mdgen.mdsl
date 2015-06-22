@@ -26,7 +26,14 @@ end
 
 puts output
 EOC
-  
+
+para <<-EOT
+Here we capture the string from markdown() in 'output'.
+Then we just write it out. Note: We are using some more MDSL primatives. E.g.
+h2, para and code. Mdgen takes headings from h1 to h6. A para is just a paragraph.
+'code' is a code block.
+EOT
+
 end
 
 puts output
