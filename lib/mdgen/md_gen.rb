@@ -8,7 +8,10 @@ class MdGen
   attr_reader :codes
 
   def h l,  string, &blk
-    @codes << [:h1, string]
+    # raise ::NestingLevelToo if level > 6
+
+    headm = "h#{l}".to_sym
+    @codes << [headm, string]
   yield l + 1 if block_given?
   end
   def h1 string

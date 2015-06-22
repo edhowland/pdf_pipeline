@@ -17,7 +17,7 @@ describe 'Nested Heading' do
       gen.process { h(1, 'head1') {|l|  h(l, 'head2')} }
     end
 
-    specify {skip;  subject.must_equal [[:h1, 'head1'], [:h2, 'head2']] }
+    specify {  subject.must_equal [[:h1, 'head1'], [:h2, 'head2']] }
 
 end
 end
