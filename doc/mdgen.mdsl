@@ -10,6 +10,10 @@ output = markdown do
   h2 'Basic Usage'
   para "Let's look at simple example:"
   code 'markdown { h1 "Heading" } '
+  para 'Here we generate a string of a single markdown element:'
+  code '# Heding'
+  para 'markdown() takes a block and returns a string containing the markdown. A more useful example:'
+  
 end
 
 puts output
