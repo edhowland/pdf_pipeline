@@ -20,7 +20,7 @@ end
 
   describe 'renders some text' do
   let(:rend) { PdfRend.new('./bandit.pdf') }
-    subject {  rend.render [[:para, 'bandit']] }
+    subject {  rend.render [[:para, [[:t, 'bandit']]]] }
 
     specify { subject }
   end
