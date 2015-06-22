@@ -1,6 +1,11 @@
 # mdgen.rb - MdGen class DSL to generate Markdown
 
 class MdGen
+  class NestingTooDeep < RuntimeError
+    def initialize
+      super('Nesting Level Too Deep')
+    end
+  end
   def initialize
     @codes = []
   end
@@ -8,7 +13,7 @@ class MdGen
   attr_reader :codes
 
   def h l,  string, &blk
-    # raise ::NestingLevelToo if level > 6
+     raise MdGen::NestingTooDeep if l > 6
 
     headm = "h#{l}".to_sym
     @codes << [headm, string]

@@ -47,4 +47,10 @@ end
 
   specify { subject.must_equal [[:h1, 'h1'], [:h2, 'h2'], [:h1, 'h1'], [:h2, 'h2']] }
   end
+
+  describe 'must raise MdGen::NestingTooDeep if > 6 levels' do
+    subject { ->{ gen.process { h 7, 'bad head' } } }
+
+  specify { subject.must_raise MdGen::NestingTooDeep }
+  end
 end
