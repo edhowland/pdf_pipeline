@@ -6,6 +6,10 @@ class MdGen
   end
 
   attr_reader :codes
+
+  def h string
+    @codes << [:h1, string]
+  end
   def h1 string
     @codes << [:h1, string]
   end
