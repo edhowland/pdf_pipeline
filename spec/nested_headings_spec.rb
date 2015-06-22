@@ -41,4 +41,8 @@ end
 
       ] }
   end
+
+  describe 'complicated nestedings' do
+    subject { gen.process { h(1, 'h1') {|l| h l, 'h2' }; h(1, 'h1') } }
+  end
 end
