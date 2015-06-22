@@ -9,6 +9,12 @@ describe PdfRend do
   describe 'smoke test' do
       subject { rend.render [] }
 
-  specify { subject }end
+  specify { subject }
+end
 
+  describe 'creates a test.pdf' do
+    subject { rend.render [] }
+
+  specify { subject; File.exist?('./test.pdf').must_equal true }
+  end
 end
