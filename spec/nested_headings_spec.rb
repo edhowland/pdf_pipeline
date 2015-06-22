@@ -24,7 +24,9 @@ end
     subject do
       gen.process do
         h 1, 'h1' do
-            h 2, 'h2'
+            h 2, 'h2' do
+
+              end
         end
       end
     end
