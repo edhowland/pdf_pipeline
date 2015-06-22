@@ -3,6 +3,16 @@
 require '../lib/mdgen'
 require 'minitest/autorun'
 
+
+describe PageCounter do
+  let(:counter) { PageCounter.new }
+
+  describe 'should have 0 pages' do
+    subject { counter.process {} }
+
+    specify { counter.page_count.must_equal 0 }
+  end
+end
 describe 'MdGen Pagination' do
   let(:gen) { MdGen.new }
 
