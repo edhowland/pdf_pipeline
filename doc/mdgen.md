@@ -1,19 +1,28 @@
-# mdgen.mdsl - dsl for md of MdGen notes
+# MdGen Notes
 
-require '../lib/mdgen'
+## Abstract
 
-output = markdown do
-  h 1,'MdGen Notes' do |l|
-  h l,  'Abstract'
-  para 'Notes on usage of mdgen: a Markdown Generator'
-  para 'Mdgen can be used as templating engine to generate Github Flavored Markdown. Since it just takes a Ruby block, any amount of computation can be done.'
-  h l,  'Basic Usage'
-  para "Let's look at simple example:"
-  code 'markdown { h1 "Heading" } '
-  para 'Here we generate a string of a single markdown element:'
-  code '# Heding'
-  para 'markdown() takes a block and returns a string containing the markdown. A more useful example:'
-  code <<-EOC
+Notes on usage of mdgen: a Markdown Generator
+
+Mdgen can be used as templating engine to generate Github Flavored Markdown. Since it just takes a Ruby block, any amount of computation can be done.
+
+## Basic Usage
+
+Let's look at simple example:
+
+```
+markdown { h1 "Heading" } 
+```
+
+Here we generate a string of a single markdown element:
+
+```
+# Heding
+```
+
+markdown() takes a block and returns a string containing the markdown. A more useful example:
+
+```
 # a more useful example
 
 require ../lib/mdgen'
@@ -25,43 +34,43 @@ output = markdown do
 end
 
 puts output
-EOC
 
-para <<-EOT
+```
+
 Here we capture the string from markdown() in 'output'.
 Then we just write it out. Note: We are using some more MDSL primatives. E.g.
 h2, para and code. Mdgen takes headings from h1 to h6. A para is just a paragraph.
 'code' is a code block.
-EOT
 
-  h l,  'Ruby within MDSL'
-  code <<-EOC
+
+## Ruby within MDSL
+
+```
 markdown do
-  h1 "Report for: \#{Time.now.ctime()}"
+  h1 "Report for: #{Time.now.ctime()}"
   links.each do |l|
     link l[0], l[1]
   end
 end
-EOC
 
-  para <<-EOT
+```
+
 Since this just Ruby, we can do anything allowed inside most Ruby blocks. Note we can string
 interpolation in the h1 element. And we see another primative: 'link'. The link
 element expects a title and url parameters. Out example expects the links collection
 to have 2 elements arrays.
-EOT
 
-  h l,  'Lists'
-  para <<-EOT
+
+## Lists
+
 Mdgen supports two list types: Bullets and numbers. Or unordered and ordered lists.
 Eeach type just takes an array of strings or things that can be converted to strings.
-EOT
-  code <<-EOC
+
+
+```
 markdown { bullets 'item A', 'Item B' }
 
   markdown { numbers 'Item 1', "Item 2' }
-EOC
-  end # end of h1
-end
 
-puts output
+```
+
