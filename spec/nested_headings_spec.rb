@@ -18,6 +18,12 @@ describe 'Nested Heading' do
     end
 
     specify {  subject.must_equal [[:h1, 'head1'], [:h2, 'head2']] }
-
 end
+
+  describe '6 nested headings' do
+    subject do
+
+    end
+
+  end
 end
