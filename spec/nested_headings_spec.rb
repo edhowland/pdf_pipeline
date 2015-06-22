@@ -43,6 +43,8 @@ end
   end
 
   describe 'complicated nestedings' do
-    subject { gen.process { h(1, 'h1') {|l| h l, 'h2' }; h(1, 'h1') } }
+    subject { gen.process { h(1, 'h1') {|l| h l, 'h2' }; h(1, 'h1') {|l| h(l, 'h2') } } }
+
+  specify { subject.must_equal [[:h1, 'h1'], [:h2, 'h2'], [:h1, 'h1'], [:h2, 'h2']] }
   end
 end
