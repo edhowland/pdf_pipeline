@@ -49,8 +49,21 @@ end
   end
 
   describe 'must raise MdGen::NestingTooDeep if > 6 levels' do
+    # we set a lambda for the subject. When run, it should raise exception
     subject { ->{ gen.process { h 7, 'bad head' } } }
 
   specify { subject.must_raise MdGen::NestingTooDeep }
+  end
+  describe '7 nested headings raises exception' do
+    subject do
+      gen.process do
+        h 1, 'h1' do |l|
+            h l, 'h2' do |l|
+             h(l, 'h3') {|l|  h(l, 'h4') {|l| h(l, 'h5') {|l| h(l, 'h6') } } }
+              end
+        end
+      end
+    end
+
   end
 end
