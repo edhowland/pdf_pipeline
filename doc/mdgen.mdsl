@@ -13,6 +13,19 @@ output = markdown do
   para 'Here we generate a string of a single markdown element:'
   code '# Heding'
   para 'markdown() takes a block and returns a string containing the markdown. A more useful example:'
+  code <<-EOC
+# a more useful example
+
+require ../lib/mdgen'
+
+output = markdown do
+  h2 'Second level heading'
+  para 'A paragraph.'
+  code '$ sudo gem install mdgen'
+end
+
+puts output
+EOC
   
 end
 
