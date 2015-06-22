@@ -28,7 +28,7 @@ markdown() takes a block and returns a string containing the markdown. A more us
 require ../lib/mdgen'
 
 output = markdown do
-  h2 'Second level heading'
+  h l,  'Second level heading'
   para 'A paragraph.'
   code '$ sudo gem install mdgen'
 end

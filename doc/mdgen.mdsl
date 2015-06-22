@@ -3,11 +3,11 @@
 require '../lib/mdgen'
 
 output = markdown do
-  h1 'MdGen Notes'
-  h2 'Abstract'
+  h 1,'MdGen Notes' do |l|
+  h l,  'Abstract'
   para 'Notes on usage of mdgen: a Markdown Generator'
   para 'Mdgen can be used as templating engine to generate Github Flavored Markdown. Since it just takes a Ruby block, any amount of computation can be done.'
-  h2 'Basic Usage'
+  h l,  'Basic Usage'
   para "Let's look at simple example:"
   code 'markdown { h1 "Heading" } '
   para 'Here we generate a string of a single markdown element:'
@@ -19,7 +19,7 @@ output = markdown do
 require ../lib/mdgen'
 
 output = markdown do
-  h2 'Second level heading'
+  h l,  'Second level heading'
   para 'A paragraph.'
   code '$ sudo gem install mdgen'
 end
@@ -34,7 +34,7 @@ h2, para and code. Mdgen takes headings from h1 to h6. A para is just a paragrap
 'code' is a code block.
 EOT
 
-  h2 'Ruby within MDSL'
+  h l,  'Ruby within MDSL'
   code <<-EOC
 markdown do
   h1 "Report for: \#{Time.now.ctime()}"
@@ -51,7 +51,7 @@ element expects a title and url parameters. Out example expects the links collec
 to have 2 elements arrays.
 EOT
 
-  h2 'Lists'
+  h l,  'Lists'
   para <<-EOT
 Mdgen supports two list types: Bullets and numbers. Or unordered and ordered lists.
 Eeach type just takes an array of strings or things that can be converted to strings.
@@ -61,6 +61,7 @@ markdown { bullets 'item A', 'Item B' }
 
   markdown { numbers 'Item 1', "Item 2' }
 EOC
+  end # end of h1
 end
 
 puts output
