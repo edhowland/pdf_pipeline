@@ -8,8 +8,7 @@ class PdfRend
 
   def para doc,  arr
     # call out to Prawn text method
-    #text(@formatter.format(arr))
-  doc.text arr
+  doc.text(@formatter.format(arr))
   end
 
   # render bytecodes via codes to PrawnDocument
