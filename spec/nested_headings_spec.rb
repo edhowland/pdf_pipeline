@@ -25,7 +25,7 @@ end
       gen.process do
         h 1, 'h1' do |l|
             h l, 'h2' do |l|
-             h l, 'h3'
+             h(l, 'h3') {|l| }
               end
         end
       end
