@@ -7,8 +7,9 @@ class MdGen
 
   attr_reader :codes
 
-  def h l,  string
+  def h l,  string, &blk
     @codes << [:h1, string]
+  yield l + 1 if block_given?
   end
   def h1 string
     @codes << [:h1, string]
@@ -47,6 +48,7 @@ alias_method :numbers, :ordered_list
 
 def process(&blk)
     self.instance_exec &blk
+    @codes
   end  
 
   # render the output as proper markdown

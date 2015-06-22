@@ -14,10 +14,10 @@ describe 'Nested Heading' do
 
   describe 'two nests' do
     subject do 
-      gen.process { h('head1') { h('head2')} }
+      gen.process { h(1, 'head1') {|l|  h(l, 'head2')} }
     end
 
-    specify {skip('wait'); subject.must_equal [[:h1, 'head1'], [:h2, 'head2']] }
+    specify {skip;  subject.must_equal [[:h1, 'head1'], [:h2, 'head2']] }
 
 end
 end
