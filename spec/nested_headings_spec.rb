@@ -22,7 +22,9 @@ end
 
   describe '6 nested headings' do
     subject do
+      gen.process do
 
+      end
     end
 
   end
