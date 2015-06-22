@@ -56,7 +56,7 @@ end
   end
   describe '7 nested headings raises exception' do
     subject do
-      Proc do
+      Proc.new do
       gen.process do
         h 1, 'h1' do |l|
             h l, 'h2' do |l|
