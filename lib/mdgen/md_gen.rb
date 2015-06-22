@@ -1,5 +1,13 @@
 # mdgen.rb - MdGen class DSL to generate Markdown
 
+
+class PageCounter
+  def initialize
+    @page_count = 0
+  end
+
+  attr_reader :page_count
+end
 class MdGen
   class NestingTooDeep < RuntimeError
     def initialize
