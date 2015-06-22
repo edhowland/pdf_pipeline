@@ -54,6 +54,11 @@ alias_method :numbers, :ordered_list
     @codes << [:a, title, url]
   end
 
+  def page(&blk)
+  yield
+    @codes << [:page]
+  end
+
 def process(&blk)
     self.instance_exec &blk
     @codes
