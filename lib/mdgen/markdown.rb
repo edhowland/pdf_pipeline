@@ -3,7 +3,10 @@
 
 # the main markdown object
 def markdown(r=GfmRender.new,  &blk)
-  r.render MdGen.new.process(&blk)
+  g = MdGen.new
+  g.process &blk
+
+  r.render g.codes
 end
 
 
