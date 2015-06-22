@@ -51,6 +51,16 @@ element expects a title and url parameters. Out example expects the links collec
 to have 2 elements arrays.
 EOT
 
+  h2 'Lists'
+  para <<-EOT
+Mdgen supports two list types: Bullets and numbers. Or unordered and ordered lists.
+Eeach type just takes an array of strings or things that can be converted to strings.
+EOT
+  code <<-EOC
+markdown { bullets 'item A', 'Item B' }
+
+  markdown { numbers 'Item 1', "Item 2' }
+EOC
 end
 
 puts output
