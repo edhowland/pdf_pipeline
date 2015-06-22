@@ -17,4 +17,10 @@ end
 
   specify { subject; File.exist?('./test.pdf').must_equal true }
   end
+
+  describe 'renders some text' do
+    subject {  rend.render [[:para, 'bandit']] }
+
+    specify { subject }
+  end
 end

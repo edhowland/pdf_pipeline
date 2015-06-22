@@ -3,14 +3,21 @@
 class PdfRend
   def initialize pathname
 @pathname = pathname
-  puts "init: #{@pathname}"
+    @formatter = PdfTextFormat.new
+  end
+
+  def para doc,  arr
+    # call out to Prawn text method
+    #text(@formatter.format(arr))
+  doc.text arr
   end
 
   # render bytecodes via codes to PrawnDocument
+  # calls methods in this class whick will call Prawn::Document methods
   def render codes
-  puts "Pathname: #{@pathname}"
-Prawn::Document.generate(@pathname) do
-  text 'smoke'
+    me = self
+Prawn::Document.generate(@pathname) do |doc|
+    codes.each {|code| me.send code[0], doc, code[1] }
   end
     
   end
