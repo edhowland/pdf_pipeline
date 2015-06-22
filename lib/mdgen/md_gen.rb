@@ -31,6 +31,8 @@ def para string
     @codes << [:ol, list]
   end
 
+alias_method :numbers, :ordered_list
+
   def bullets *list
       @codes << [:ul, list]
   end
