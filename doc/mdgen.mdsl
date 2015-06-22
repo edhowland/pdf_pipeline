@@ -34,6 +34,23 @@ h2, para and code. Mdgen takes headings from h1 to h6. A para is just a paragrap
 'code' is a code block.
 EOT
 
+  h2 'Ruby within MDSL'
+  code <<-EOC
+markdown do
+  h1 "Report for: \#{Time.now.ctime()}"
+  links.each do |l|
+    link l[0], l[1]
+  end
+end
+EOC
+
+  para <<-EOT
+Since this just Ruby, we can do anything allowed inside most Ruby blocks. Note we can string
+interpolation in the h1 element. And we see another primative: 'link'. The link
+element expects a title and url parameters. Out example expects the links collection
+to have 2 elements arrays.
+EOT
+
 end
 
 puts output
