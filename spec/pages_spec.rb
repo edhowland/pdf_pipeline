@@ -18,6 +18,12 @@ describe 'block with 2 page blocks' do
 
     specify { subject.must_equal 2  }
   end
+
+  describe 'with head and no pages' do
+    subject { counter.process {  h1 '' } }
+
+    specify { subject.must_equal 0}
+  end
 end
 describe 'MdGen Pagination' do
   let(:gen) { MdGen.new }

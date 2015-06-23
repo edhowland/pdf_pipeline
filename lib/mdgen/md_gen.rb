@@ -16,6 +16,9 @@ def page *args, &blk
     self.instance_exec &blk
     @page_count
   end
+
+  def method_missing *args
+  end
 end
 
 
