@@ -76,9 +76,15 @@ EOP
   code <<-EOC
 page do |pageno, total|
   para 'some content'
-  h6 "Page #{pageno} of #{total}"
+  h6 "Page \#{pageno} of \#{total}"
 end
 EOC
+
+  para <<-EOP
+InGFM markdown, the actual page blocks are ignored,
+ except for any string interolations.
+In PDF generation, they create normal page breaks
+EOP
   end # end of h1
 end
 

@@ -4,7 +4,7 @@
 
 Notes on usage of mdgen: a Markdown Generator
 
-Mdgen can be used as templating engine to generate Github Flavored Markdown. Since it just takes a Ruby block, any amount of computation can be done.
+Mdgen can be used as templating engine to generate Github Flavored Markdown, or PDF directly. Since it just takes a Ruby block, any amount of computation can be done.
 
 MdGen supports the following elements:
 
@@ -82,4 +82,24 @@ markdown { bullets 'item A', 'Item B' }
   markdown { numbers 'Item 1', "Item 2' }
 
 ```
+
+## Pages
+
+Pages can be usedto subdivide the reuslting output into pages.
+Pages are det as Ruby block with ccurrent page number and total page count passed.
+You can then use string interpolation to place the output in the output, if desired. Let's look at an example
+
+
+```
+page do |pageno, total|
+  para 'some content'
+  h6 "Page #{pageno} of #{total}"
+end
+
+```
+
+InGFM markdown, the actual page blocks are ignored,
+ except for any string interolations.
+In PDF generation, they create normal page breaks
+
 
