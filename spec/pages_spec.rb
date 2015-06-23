@@ -14,9 +14,9 @@ describe PageCounter do
   end
 
 describe 'block with 2 page blocks' do
-    #subject { counter.process {page { } ; page { } } }
+    subject { counter.process {page { } ; page { } } }
 
-    specify { counter.page_count.must_equal 2  }
+    specify { subject.must_equal 2  }
   end
 end
 describe 'MdGen Pagination' do

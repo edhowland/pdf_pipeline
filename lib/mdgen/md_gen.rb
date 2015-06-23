@@ -9,9 +9,12 @@ class PageCounter
   attr_reader :page_count
 
 def page *args
+  @page_count += 1
   end
 
   def process(&blk)
+    self.instance_exec &blk
+    @page_count
   end
 end
 
