@@ -24,12 +24,17 @@ end
 
 class MdGen
   class NestingTooDeep < RuntimeError
+
+
     def initialize
       super('Nesting Level Too Deep')
     end
   end
+
   def initialize
     @codes = []
+  @page_count = 0
+    @page_current = 0
   end
 
   attr_reader :codes
@@ -77,11 +82,14 @@ alias_method :numbers, :ordered_list
   end
 
   def page(&blk)
+    @page_current += 1
   yield
-    @codes << [:page, 1, 1]
+    @codes << [:page, @page_current, @page_count]
   end
 
 def process(&blk)
+    # count pages first
+    @page_count = PageCounter.new.process(&blk)
     self.instance_exec &blk
     @codes
   end  

@@ -39,4 +39,10 @@ describe 'MdGen Pagination' do
 
     specify { subject.must_equal [[:h1, 'text'], [:page, 1, 1]] }
   end
+
+  describe 'block with 2 page vlocks' do
+    subject { gen.process { page {}; page {} }}
+
+  specify { subject.must_equal [[:page, 1, 2], [:page, 2,2]]  }
+  end
 end
