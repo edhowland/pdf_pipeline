@@ -10,7 +10,7 @@ describe PageCounter do
   describe 'should have 0 pages' do
     subject { counter.process {} }
 
-    specify { counter.page_count.must_equal 0 }
+    specify { subject.must_equal 0 }
   end
 
 describe 'block with 2 page blocks' do

@@ -8,7 +8,7 @@ class PageCounter
 
   attr_reader :page_count
 
-def page *args
+def page *args, &blk
   @page_count += 1
   end
 
