@@ -1,13 +1,40 @@
 # mdgen.rb - MdGen class DSL to generate Markdown
 
+
+class PageCounter
+  def initialize
+    @page_count = 0
+  end
+
+  attr_reader :page_count
+
+def page *args, &blk
+  @page_count += 1
+  end
+
+  def process(&blk)
+    self.instance_exec &blk
+    @page_count
+  end
+
+  def method_missing *args
+  end
+end
+
+
 class MdGen
   class NestingTooDeep < RuntimeError
+
+
     def initialize
       super('Nesting Level Too Deep')
     end
   end
+
   def initialize
     @codes = []
+  @page_count = 0
+    @page_current = 0
   end
 
   attr_reader :codes
@@ -54,7 +81,15 @@ alias_method :numbers, :ordered_list
     @codes << [:a, title, url]
   end
 
+  def page(&blk)
+    @page_current += 1
+  yield @page_current, @page_count
+    @codes << [:page, @page_current, @page_count]
+  end
+
 def process(&blk)
+    # count pages first
+    @page_count = PageCounter.new.process(&blk)
     self.instance_exec &blk
     @codes
   end  

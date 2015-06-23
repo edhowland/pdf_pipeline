@@ -118,4 +118,10 @@ describe 'heading 5' do
 
   specify { subject.must_equal "[title](url)\n"  }
   end
+
+  describe 'ignore pages' do
+    subject { @r.render [[:page, 1, 1]] }
+
+  specify { subject.must_equal '' }
+  end
 end

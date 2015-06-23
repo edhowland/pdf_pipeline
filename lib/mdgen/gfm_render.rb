@@ -53,7 +53,9 @@ def ol list
     "[#{urlspec[0]}](#{urlspec[1]})"
   end
 
+
+  # filter :page from list, then run map/reduce on the rest
   def render codes
-    codes.map {|e| self.send e[0], e[1] }.reduce('') {|i, j| i << "#{j}\n" }
+    codes.select {|e| e[0] != :page  }.map {|e| self.send e[0], e[1] }.reduce('') {|i, j| i << "#{j}\n" }
   end
 end
