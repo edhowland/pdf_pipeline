@@ -37,6 +37,6 @@ describe 'MdGen Pagination' do
   describe 'should have page method taking a block' do
     subject { gen.process { page { h1 'text' } } }
 
-    specify { subject.must_equal [[:h1, 'text'], [:page]] }
+    specify { subject.must_equal [[:h1, 'text'], [:page, 1, 1]] }
   end
 end

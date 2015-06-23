@@ -78,7 +78,7 @@ alias_method :numbers, :ordered_list
 
   def page(&blk)
   yield
-    @codes << [:page]
+    @codes << [:page, 1, 1]
   end
 
 def process(&blk)
