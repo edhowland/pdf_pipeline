@@ -7,7 +7,15 @@ class PageCounter
   end
 
   attr_reader :page_count
+
+def page *args
+  end
+
+  def process(&blk)
+  end
 end
+
+
 class MdGen
   class NestingTooDeep < RuntimeError
     def initialize

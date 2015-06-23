@@ -12,6 +12,12 @@ describe PageCounter do
 
     specify { counter.page_count.must_equal 0 }
   end
+
+describe 'block with 2 page blocks' do
+    #subject { counter.process {page { } ; page { } } }
+
+    specify { counter.page_count.must_equal 2  }
+  end
 end
 describe 'MdGen Pagination' do
   let(:gen) { MdGen.new }
