@@ -49,6 +49,6 @@ describe 'MdGen Pagination' do
   describe 'passing variables to page blocks' do
     subject { gen.process { page {|page, total| h1 "page: #{page}, total: #{total}" } } }
 
-  specify {subject.must_equal [[:h1, 'page: 1 total: 1'], [:page, 1,1]] }
+  specify {subject.must_equal [[:h1, 'page: 1, total: 1'], [:page, 1,1]] }
   end
 end

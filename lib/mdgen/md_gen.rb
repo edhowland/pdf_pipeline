@@ -83,7 +83,7 @@ alias_method :numbers, :ordered_list
 
   def page(&blk)
     @page_current += 1
-  yield
+  yield @page_current, @page_count
     @codes << [:page, @page_current, @page_count]
   end
 
