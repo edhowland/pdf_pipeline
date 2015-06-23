@@ -24,6 +24,12 @@ describe 'block with 2 page blocks' do
 
     specify { subject.must_equal 0}
   end
+  describe 'block with h1, 2 pages block with inner primatives' do
+    subject { counter.process { h2 ''; page {  para '' }; page { code '' } } }
+
+    specify { subject.must_equal 2 }
+  end 
+
 end
 describe 'MdGen Pagination' do
   let(:gen) { MdGen.new }
