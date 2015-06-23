@@ -6,7 +6,10 @@ output = markdown do
   h 1,'MdGen Notes' do |l|
   h l,  'Abstract'
   para 'Notes on usage of mdgen: a Markdown Generator'
-  para 'Mdgen can be used as templating engine to generate Github Flavored Markdown. Since it just takes a Ruby block, any amount of computation can be done.'
+  para 'Mdgen can be used as templating engine to generate Github Flavored Markdown, or PDF directly. Since it just takes a Ruby block, any amount of computation can be done.'
+
+  para 'MdGen supports the following elements:'
+  bullets 'Headings: h1 .. h6', 'Paragraphs: para (with embedded styles)','Code Blocks: code', 'Lists: numbers, bullets', 'pages: page', 'Links: link'
   h l,  'Basic Usage'
   para "Let's look at simple example:"
   code 'markdown { h1 "Heading" } '
@@ -60,6 +63,21 @@ EOT
 markdown { bullets 'item A', 'Item B' }
 
   markdown { numbers 'Item 1', "Item 2' }
+EOC
+
+  h l, 'Pages'
+
+  para <<-EOP 
+Pages can be usedto subdivide the reuslting output into pages.
+Pages are det as Ruby block with ccurrent page number and total page count passed.
+You can then use string interpolation to place the output in the output, if desired. Let's look at an example
+EOP
+
+  code <<-EOC
+page do |pageno, total|
+  para 'some content'
+  h6 "Page #{pageno} of #{total}"
+end
 EOC
   end # end of h1
 end

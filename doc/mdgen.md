@@ -6,6 +6,15 @@ Notes on usage of mdgen: a Markdown Generator
 
 Mdgen can be used as templating engine to generate Github Flavored Markdown. Since it just takes a Ruby block, any amount of computation can be done.
 
+MdGen supports the following elements:
+
+- Headings: h1 .. h6
+- Paragraphs: para (with embedded styles)
+- Code Blocks: code
+- Lists: numbers, bullets
+- pages: page
+- Links: link
+
 ## Basic Usage
 
 Let's look at simple example:
