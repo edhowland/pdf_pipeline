@@ -124,4 +124,12 @@ describe 'heading 5' do
 
   specify { subject.must_equal '' }
   end
+
+  describe 'render table' do
+    subject { rend.render [[:table, [
+      ['head','head'],
+        ['cell 1', 'cell 2'],
+        ['row r21', 'col 2']
+      ]]] }
+  end
 end
