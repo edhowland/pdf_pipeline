@@ -87,6 +87,10 @@ alias_method :numbers, :ordered_list
     @codes << [:page, @page_current, @page_count]
   end
 
+  def table arr
+    @codes << [:table, arr]
+  end
+
 def process(&blk)
     # count pages first
     @page_count = PageCounter.new.process(&blk)
