@@ -61,6 +61,23 @@ element expects a title and url parameters. Out example expects the links collec
 to have 2 elements arrays.
 EOT
 
+  h l, 'Paragraphs with inline styles: para'
+  para <<-EOP
+Paragraphs are just unstructred text and represented with a 'para' command
+To use inline styles, just surround with a '[style text]' form.
+The  current supported styles are 'bold' and 'ital' for {bold Bold] and [ital Italics].
+Here is a simple example:
+EOP
+
+code <<-EOC
+markdown do
+  para <<-EOP
+This a [bold BOLD] word.
+Here is an [ital Italic] word.
+  EOP
+end
+EOC
+
   h l,  'Lists'
   para <<-EOT
 Mdgen supports two list types: Bullets and numbers. Or unordered and ordered lists.
@@ -156,6 +173,22 @@ puts m
 # footer.mdsl:
 
 ->{ h6 '(c) Example.com' }
+EOC
+
+  para 'Here the output from the above example:'
+  code <<-EOC
+# Report for: Wed Jun 24 17:52:05 2015
+
+Content for Page : 1
+
+###### (c) Example.com
+
+# Report for: Wed Jun 24 17:52:05 2015
+
+Content for Page : 2
+
+###### (c) Example.com
+
 EOC
   end # end of h1
 end

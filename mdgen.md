@@ -15,6 +15,7 @@ MdGen supports the following elements:
 - pages: page
 - Links: link
 - Tables
+- importing MDSL content
 
 ## Basic Usage
 
@@ -126,4 +127,68 @@ And here is the output:
 head1|head2
 ----|----
 cell1|cell2
+
+## Importing MDSL content
+
+Other files containing MDSL content can be imported with the 'import' command.
+This content is interpreted in the context of the current block and
+inserted into the opcode stream at the place where it occurs. This can be useful
+for inserting static content without resorting copy and pasting.
+Here is an example that imports a header and footer at th top of every page:
+
+
+```
+# pages_imports.mdsl:
+
+
+# pages_imports.mdsl - MdGen file with 2 pages and header and footer
+
+require '../lib/mdgen'
+
+m = markdown do
+  page do |current, total|
+    import 'header.mdsl'
+
+    para "Content for Page : #{current}"
+
+    import 'footer.mdsl'
+  end
+
+  page do |current, total|
+    import 'header.mdsl'
+
+    para "Content for Page : #{current}"
+
+    import 'footer.mdsl'
+  end
+end
+
+puts m
+
+# header.mdsl:
+
+->{ h1 "Report for: #{Time.now.ctime}" }
+# footer.mdsl:
+
+->{ h6 '(c) Example.com' }
+
+```
+
+Here the output from the above example:
+
+```
+# Report for: Wed Jun 24 17:52:05 2015
+
+Content for Page : 1
+
+###### (c) Example.com
+
+# Report for: Wed Jun 24 17:52:05 2015
+
+Content for Page : 2
+
+###### (c) Example.com
+
+
+```
 
