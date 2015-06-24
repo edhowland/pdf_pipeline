@@ -54,6 +54,15 @@ def ol list
   end
 
 
+  def insert_dashes arr
+    arr
+  end
+  def table arr
+    #mod = [arr[0]] + ['----', '----'] + arr[1..(-1)]
+    arr.map {|e| e.join('|') }.join("\n") + "\n"
+  end
+
+
   # filter :page from list, then run map/reduce on the rest
   def render codes
     codes.select {|e| e[0] != :page  }.map {|e| self.send e[0], e[1] }.reduce('') {|i, j| i << "#{j}\n" }
