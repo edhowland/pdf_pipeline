@@ -55,7 +55,7 @@ def ol list
 
 
   def insert_dashes arr
-    arr
+    [arr[0], ['----']] + arr[1..(-1)]
   end
   def table arr
     #mod = [arr[0]] + ['----', '----'] + arr[1..(-1)]
