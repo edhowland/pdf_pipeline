@@ -102,8 +102,15 @@ the row of dashes, the following rows will be the body of the table.
 The table command in MdGen takes an array of arrays where the first
 inner array is converted to the header row.
 The subsequent arrays will be converted to the body separated with row of '----'.
-Here is simplae example:
+Here is a simple example:
 EOP
+
+code <<-EOC
+markdown { table [['head1', 'head2'], ['cell1', 'cell2']] }
+EOC
+
+  para 'And here is the output:'
+  table [['head1', 'head2'], ['cell1', 'cell2']] 
   end # end of h1
 end
 
