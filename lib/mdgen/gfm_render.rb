@@ -54,7 +54,8 @@ def ol list
   end
 
   def insert_dashes arr
-    [arr[0], ['----']] + arr[1..(-1)]
+    col_count = arr[0].length
+    [arr[0], (['----'] * col_count) ] + arr[1..(-1)]
   end
   def table arr
     insert_dashes(arr).map {|e| e.join('|') }.join("\n") + "\n"
