@@ -15,7 +15,8 @@ output = markdown do
    'Lists: numbers, bullets',
    'pages: page',
    'Links: link',
-  'Tables'
+  'Tables',
+  'importing MDSL content'
   h l,  'Basic Usage'
   para "Let's look at simple example:"
   code 'markdown { h1 "Heading" } '
@@ -111,6 +112,51 @@ EOC
 
   para 'And here is the output:'
   table [['head1', 'head2'], ['cell1', 'cell2']] 
+
+  h l, 'Importing MDSL content'
+  para <<-EOP
+Other files containing MDSL content can be imported with the 'import' command.
+This content is interpreted in the context of the current block and
+inserted into the opcode stream at the place where it occurs. This can be useful
+for inserting static content without resorting copy and pasting.
+Here is an example that imports a header and footer at th top of every page:
+EOP
+
+  code <<-EOC
+# pages_imports.mdsl:
+
+
+# pages_imports.mdsl - MdGen file with 2 pages and header and footer
+
+require '../lib/mdgen'
+
+m = markdown do
+  page do |current, total|
+    import 'header.mdsl'
+
+    para "Content for Page : #{current}"
+
+    import 'footer.mdsl'
+  end
+
+  page do |current, total|
+    import 'header.mdsl'
+
+    para "Content for Page : #{current}"
+
+    import 'footer.mdsl'
+  end
+end
+
+puts m
+
+# header.mdsl:
+
+->{ h1 "Report for: #{Time.now.ctime}" }
+# footer.mdsl:
+
+->{ h6 '(c) Example.com' }
+EOC
   end # end of h1
 end
 
