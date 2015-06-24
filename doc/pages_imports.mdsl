@@ -1,0 +1,23 @@
+# pages_imports.mdsl - MdGen file with 2 pages and header and footer
+
+require '../lib/mdgen'
+
+m = markdown do
+  page do |current, total|
+    import 'header.mdsl'
+
+    para "Content for Page : #{current}"
+
+    import 'footer.mdsl'
+  end
+
+  page do |current, total|
+    import 'header.mdsl'
+
+    para "Content for Page : #{current}"
+
+    import 'footer.mdsl'
+  end
+end
+
+puts m
