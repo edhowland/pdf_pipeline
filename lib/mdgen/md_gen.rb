@@ -54,6 +54,22 @@ class MdGen
     @codes << [:h2, string]
   end
 
+  def h3 string
+    @codes << [:h3, string]
+  end
+
+  def h4 string
+    @codes << [:h4, string]
+  end
+
+  def h5 string
+    @codes << [:h5, string]
+  end
+
+  def h6 string
+    @codes << [:h6, string]
+  end
+
   def code string
     @codes << [:code, string]
   end
@@ -91,6 +107,14 @@ alias_method :numbers, :ordered_list
     @codes << [:table, arr]
   end
 
+  # import a .mdsl file, process it and add opcodes to our @codes
+  def import filename
+  blk_str = File.read filename
+    blk = eval blk_str
+  self.instance_exec &blk
+  end
+
+  # process the block which contains the MDSL commads returning array of opcodes
 def process(&blk)
     # count pages first
     @page_count = PageCounter.new.process(&blk)
