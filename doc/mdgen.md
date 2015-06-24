@@ -72,6 +72,31 @@ element expects a title and url parameters. Out example expects the links collec
 to have 2 elements arrays.
 
 
+## Paragraphs with inline styles: para
+
+Paragraphs are just unstructred text and represented with a 'para' command
+To use inline styles, just surround with a 'style text' form.
+The  current supported styles are 'bold' and 'ital' for {bold Bold and *Italics*.
+Here is a simple example:
+
+
+```
+markdown do
+  para <<-EOP
+This a [bold BOLD] word.
+Here is an [ital Italic] word.
+  EOP
+end
+
+```
+
+## Code blocks: code
+
+Code fences are represented by '```' surrounding it in GFM markdown.
+In MdGen, you just use the 'code' command passing it simple string.
+Note: Be sure to not allow any uninted string interpolation where you do not wantit
+
+
 ## Lists
 
 Mdgen supports two list types: Bullets and numbers. Or unordered and ordered lists.
