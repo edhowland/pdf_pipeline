@@ -58,4 +58,10 @@ describe 'MdGen: complicated examples' do
         ['row r21', 'col 2']
       ]]] }
   end
+
+  describe 'importing .mdsl file' do
+    subject { gen.process { import 'header.mdsl' }  }
+
+  specify { subject.must_equal [[:h6, 'Report']] }
+  end
 end
