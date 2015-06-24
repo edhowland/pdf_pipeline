@@ -9,7 +9,13 @@ output = markdown do
   para 'Mdgen can be used as templating engine to generate Github Flavored Markdown, or PDF directly. Since it just takes a Ruby block, any amount of computation can be done.'
 
   para 'MdGen supports the following elements:'
-  bullets 'Headings: h1 .. h6', 'Paragraphs: para (with embedded styles)','Code Blocks: code', 'Lists: numbers, bullets', 'pages: page', 'Links: link'
+  bullets 'Headings: h1 .. h6', 
+  'Paragraphs: para (with embedded styles)',
+  'Code Blocks: code',
+   'Lists: numbers, bullets',
+   'pages: page',
+   'Links: link',
+  'Tables'
   h l,  'Basic Usage'
   para "Let's look at simple example:"
   code 'markdown { h1 "Heading" } '
