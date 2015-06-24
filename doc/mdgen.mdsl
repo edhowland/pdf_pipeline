@@ -134,7 +134,7 @@ m = markdown do
   page do |current, total|
     import 'header.mdsl'
 
-    para "Content for Page : #{current}"
+    para "Content for Page : \#{current}"
 
     import 'footer.mdsl'
   end
@@ -142,7 +142,7 @@ m = markdown do
   page do |current, total|
     import 'header.mdsl'
 
-    para "Content for Page : #{current}"
+    para "Content for Page : \#{current}"
 
     import 'footer.mdsl'
   end
@@ -152,7 +152,7 @@ puts m
 
 # header.mdsl:
 
-->{ h1 "Report for: #{Time.now.ctime}" }
+->{ h1 "Report for: \#{Time.now.ctime}" }
 # footer.mdsl:
 
 ->{ h6 '(c) Example.com' }
