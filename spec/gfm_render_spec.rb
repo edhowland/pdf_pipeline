@@ -130,7 +130,7 @@ describe 'heading 5' do
   describe 'inserting dashes into array' do
     subject { rend.insert_dashes [['a'],['b']] }
 
-    #specify { subject.must_equal [['a], ['----'], ['b']] }
+    specify { subject.must_equal  [['a'], ['----'], ['b'] ] }
   end
   describe 'render table' do
     subject { rend.render [[:table, [
