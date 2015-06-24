@@ -136,7 +136,7 @@ describe 'heading 5' do
 describe 'insert correct column numbers of dashes' do
     subject {rend.insert_dashes [['a', 'a'], ['b', 'b']]  }
 
-    specify { }
+    specify { subject.must_equal [['a', 'a'], ['----', '----'], ['b', 'b']]  }
 end
   describe 'render table' do
     subject { rend.render [[:table, [
