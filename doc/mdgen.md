@@ -14,6 +14,7 @@ MdGen supports the following elements:
 - Lists: numbers, bullets
 - pages: page
 - Links: link
+- Tables
 
 ## Basic Usage
 
@@ -102,4 +103,27 @@ InGFM markdown, the actual page blocks are ignored,
  except for any string interolations.
 In PDF generation, they create normal page breaks
 
+
+## Tables
+
+Tables in Markdown can be tricky.
+You **must** have a row of '---' matching the column count of the first raow.
+The first row will ve converted to the header of the table. Rows after
+the row of dashes, the following rows will be the body of the table.
+The table command in MdGen takes an array of arrays where the first
+inner array is converted to the header row.
+The subsequent arrays will be converted to the body separated with row of '----'.
+Here is a simple example:
+
+
+```
+markdown { table [['head1', 'head2'], ['cell1', 'cell2']] }
+
+```
+
+And here is the output:
+
+head1|head2
+----|----
+cell1|cell2
 

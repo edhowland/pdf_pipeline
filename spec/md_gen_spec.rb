@@ -44,4 +44,18 @@ describe 'MdGen: complicated examples' do
 
     specify { subject.must_equal [[:code, 'code'], [:para, [[:t, 'text']]]] }
   end
+
+  describe 'render table' do
+    subject { gen.process { table [
+      ['head','head'],
+        ['cell 1', 'cell 2'],
+        ['row r21', 'col 2']
+      ] } } 
+
+    specify { subject.must_equal [[:table, [
+      ['head','head'],
+        ['cell 1', 'cell 2'],
+        ['row r21', 'col 2']
+      ]]] }
+  end
 end

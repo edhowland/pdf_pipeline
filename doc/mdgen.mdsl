@@ -9,7 +9,13 @@ output = markdown do
   para 'Mdgen can be used as templating engine to generate Github Flavored Markdown, or PDF directly. Since it just takes a Ruby block, any amount of computation can be done.'
 
   para 'MdGen supports the following elements:'
-  bullets 'Headings: h1 .. h6', 'Paragraphs: para (with embedded styles)','Code Blocks: code', 'Lists: numbers, bullets', 'pages: page', 'Links: link'
+  bullets 'Headings: h1 .. h6', 
+  'Paragraphs: para (with embedded styles)',
+  'Code Blocks: code',
+   'Lists: numbers, bullets',
+   'pages: page',
+   'Links: link',
+  'Tables'
   h l,  'Basic Usage'
   para "Let's look at simple example:"
   code 'markdown { h1 "Heading" } '
@@ -85,6 +91,26 @@ InGFM markdown, the actual page blocks are ignored,
  except for any string interolations.
 In PDF generation, they create normal page breaks
 EOP
+
+  h l, 'Tables'
+
+  para <<-EOP
+Tables in Markdown can be tricky.
+You [bold must] have a row of '---' matching the column count of the first raow.
+The first row will ve converted to the header of the table. Rows after
+the row of dashes, the following rows will be the body of the table.
+The table command in MdGen takes an array of arrays where the first
+inner array is converted to the header row.
+The subsequent arrays will be converted to the body separated with row of '----'.
+Here is a simple example:
+EOP
+
+code <<-EOC
+markdown { table [['head1', 'head2'], ['cell1', 'cell2']] }
+EOC
+
+  para 'And here is the output:'
+  table [['head1', 'head2'], ['cell1', 'cell2']] 
   end # end of h1
 end
 

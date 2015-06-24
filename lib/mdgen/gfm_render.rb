@@ -53,6 +53,14 @@ def ol list
     "[#{urlspec[0]}](#{urlspec[1]})"
   end
 
+  def insert_dashes arr
+    col_count = arr[0].length
+    [arr[0], (['----'] * col_count) ] + arr[1..(-1)]
+  end
+  def table arr
+    insert_dashes(arr).map {|e| e.join('|') }.join("\n") + "\n"
+  end
+
 
   # filter :page from list, then run map/reduce on the rest
   def render codes

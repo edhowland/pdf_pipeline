@@ -5,6 +5,7 @@ require 'minitest/autorun'
 
 describe GfmRender do
   before { @r = GfmRender.new }
+  let(:rend) { GfmRender.new }
 
   describe 'render empty codes' do
     subject { @r.render [] }
@@ -123,5 +124,27 @@ describe 'heading 5' do
     subject { @r.render [[:page, 1, 1]] }
 
   specify { subject.must_equal '' }
+  end
+
+
+  describe 'inserting dashes into array' do
+    subject { rend.insert_dashes [['a'],['b']] }
+
+    specify { subject.must_equal  [['a'], ['----'], ['b'] ] }
+  end
+
+describe 'insert correct column numbers of dashes' do
+    subject {rend.insert_dashes [['a', 'a'], ['b', 'b']]  }
+
+    specify { subject.must_equal [['a', 'a'], ['----', '----'], ['b', 'b']]  }
+end
+  describe 'render table' do
+    subject { rend.render [[:table, [
+      ['head','head'],
+        ['cell 1', 'cell 2'],
+        ['row 2', 'col 2']
+      ]]] }
+
+    specify {  subject.must_equal"head|head\n----|----\ncell 1|cell 2\nrow 2|col 2\n\n"  }
   end
 end
