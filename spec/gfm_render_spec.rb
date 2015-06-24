@@ -131,5 +131,7 @@ describe 'heading 5' do
         ['cell 1', 'cell 2'],
         ['row r21', 'col 2']
       ]]] }
+
+    specify { subject.must_equal"head|head\n----|----\ncell 1|cell 2\nrow 2|col 2\n\n"  }
   end
 end
