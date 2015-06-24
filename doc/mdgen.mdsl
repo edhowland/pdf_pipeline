@@ -91,6 +91,19 @@ InGFM markdown, the actual page blocks are ignored,
  except for any string interolations.
 In PDF generation, they create normal page breaks
 EOP
+
+  h l, 'Tables'
+
+  para <<-EOP
+Tables in Markdown can be tricky.
+You [bold must] have a row of '---' matching the column count of the first raow.
+The first row will ve converted to the header of the table. Rows after
+the row of dashes, the following rows will be the body of the table.
+The table command in MdGen takes an array of arrays where the first
+inner array is converted to the header row.
+The subsequent arrays will be converted to the body separated with row of '----'.
+Here is simplae example:
+EOP
   end # end of h1
 end
 
