@@ -53,13 +53,11 @@ def ol list
     "[#{urlspec[0]}](#{urlspec[1]})"
   end
 
-
   def insert_dashes arr
     [arr[0], ['----']] + arr[1..(-1)]
   end
   def table arr
-    #mod = [arr[0]] + ['----', '----'] + arr[1..(-1)]
-    arr.map {|e| e.join('|') }.join("\n") + "\n"
+    insert_dashes(arr).map {|e| e.join('|') }.join("\n") + "\n"
   end
 
 
