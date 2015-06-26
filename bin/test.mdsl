@@ -1,0 +1,11 @@
+h1 'Heading 1'
+
+h2 'heading 2'
+
+para 'this just [ital text].'
+
+code 'sudo apt-get install mdgen'
+
+h6 'End of File'
+
+h3 'heading 3'

@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+# mdgen - cli tool to process MDSL files
+
+require '../lib/mdgen'
+
+contents = File.read ARGV.first
+g = MdGen.new
+r = GfmRender.new
+
+output =   r.render(g.eval_string(contents))
+puts output
