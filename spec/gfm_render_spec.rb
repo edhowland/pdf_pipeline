@@ -147,4 +147,10 @@ end
 
     specify {  subject.must_equal"head|head\n----|----\ncell 1|cell 2\nrow 2|col 2\n\n"  }
   end
+
+  describe 'html_table' do
+    subject { rend.render [[:html_table, [] ]] }
+
+    specify { subject.must_equal "<table></table>\n\n" }
+  end
 end

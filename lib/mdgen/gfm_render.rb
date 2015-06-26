@@ -61,6 +61,10 @@ def ol list
     insert_dashes(arr).map {|e| e.join('|') }.join("\n") + "\n"
   end
 
+  def html_table arr
+    ''
+  end
+
 
   # filter :page from list, then run map/reduce on the rest
   def render codes
