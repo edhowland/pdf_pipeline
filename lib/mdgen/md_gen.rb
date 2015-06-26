@@ -12,6 +12,10 @@ def page *args, &blk
   @page_count += 1
   end
 
+  def eval_string string
+    self.instance_eval string
+  end
+
   def process(&blk)
     self.instance_exec &blk
     @page_count
@@ -99,7 +103,7 @@ alias_method :numbers, :ordered_list
 
   def page(&blk)
     @page_current += 1
-  yield @page_current, @page_count
+  yield @page_current, @page_count if block_given?
     @codes << [:page, @page_current, @page_count]
   end
 
@@ -116,6 +120,11 @@ alias_method :numbers, :ordered_list
   blk_str = File.read filename
     blk = eval blk_str
   self.instance_exec &blk
+  end
+
+  def eval_string string
+    @page_count = PageCounter.new.eval_string string
+    self.instance_eval string
   end
 
   # process the block which contains the MDSL commads returning array of opcodes
