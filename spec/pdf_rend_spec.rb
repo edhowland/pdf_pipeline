@@ -4,6 +4,7 @@ require '../lib/pdfrend'
 require 'minitest/autorun'
 
 describe PdfRend do
+    after { FileUtils.rm_f 'test.pdf' }
   let(:rend) { PdfRend.new('./test.pdf') }
 
   describe 'smoke test' do
@@ -19,6 +20,9 @@ end
   end
 
   describe 'renders some text' do
+    after do
+      FileUtils.rm_f 'bandit.pdf'
+    end
   let(:rend) { PdfRend.new('./bandit.pdf') }
     subject {  rend.render [[:para, [[:t, 'bandit']]]] }
 
