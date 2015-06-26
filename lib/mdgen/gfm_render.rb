@@ -61,6 +61,11 @@ def ol list
     insert_dashes(arr).map {|e| e.join('|') }.join("\n") + "\n"
   end
 
+  def html_table arr, attrs={}
+    r = Builder::XmlMarkup.new 
+    r.table(attrs) { arr.each {|row| r.tr { row.each {|col| r.td col  }  } } } + "\n"
+  end
+
 
   # filter :page from list, then run map/reduce on the rest
   def render codes

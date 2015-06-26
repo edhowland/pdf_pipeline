@@ -59,6 +59,12 @@ describe 'MdGen: complicated examples' do
       ]]] }
   end
 
+  describe 'html_table' do
+    subject { gen.process {  html_table [] } }
+
+    specify { subject.must_equal [[:html_table, []]] }
+  end
+
   describe 'importing .mdsl file' do
     subject { gen.process { import 'header.mdsl' }  }
 

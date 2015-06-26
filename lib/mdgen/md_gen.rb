@@ -107,6 +107,10 @@ alias_method :numbers, :ordered_list
     @codes << [:table, arr]
   end
 
+  def html_table arr
+    @codes << [:html_table, arr]
+  end
+
   # import a .mdsl file, process it and add opcodes to our @codes
   def import filename
   blk_str = File.read filename

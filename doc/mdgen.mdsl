@@ -15,7 +15,7 @@ output = markdown do
    'Lists: numbers, bullets',
    'pages: page',
    'Links: link',
-  'Tables',
+  'Tables: table, html_table',
   'importing MDSL content'
   h l,  'Basic Usage'
   para "Let's look at simple example:"
@@ -117,8 +117,14 @@ InGFM markdown, the actual page blocks are ignored,
 In PDF generation, they create normal page breaks
 EOP
 
-  h l, 'Tables'
+  h l, 'Tables: table, html_table' do |l2|
 
+    para 'MdGen supports 2 table methods:'
+
+    bullets 'GFM Tables: table', 'HTML Tables: html_table'
+
+
+    h l2, 'table'
   para <<-EOP
 Tables in Markdown can be tricky.
 You [bold must] have a row of '---' matching the column count of the first raow.
@@ -137,6 +143,17 @@ EOC
   para 'And here is the output:'
   table [['head1', 'head2'], ['cell1', 'cell2']] 
 
+
+    h l2, 'html_table'
+
+    para <<-EOP
+HTML tables get rendered as just straight HTML table tags.
+Markdown just pass any HTML through to resulting output without any changes.
+This fixes the problem with GFM needing to render the first row as the thead element.
+You just can call the 'html_table' command with the same args the 'table' command
+EOP
+
+  end # of h2
   h l, 'Importing MDSL content'
   para <<-EOP
 Other files containing MDSL content can be imported with the 'import' command.
