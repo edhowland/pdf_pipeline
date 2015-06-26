@@ -160,4 +160,11 @@ end
     specify { subject.must_equal "<table><tr><td>H</td></tr></table>\n\n" }
   end
 
+  describe 'html_table with 2 rows and 2 columns each' do
+    subject { rend.render [
+        [  ],
+        [ ]
+      ] }
+  end
+
 end
