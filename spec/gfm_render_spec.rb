@@ -173,7 +173,7 @@ end
     subject { rend.html_table [], width: '100%' }
 
     specify {
-  expected = "<table width=\"100%\"></table>\n\n"
+  expected = "<table width=\"100%\"></table>\n"
   puts expected
  puts subject
  subject.must_equal expected}
