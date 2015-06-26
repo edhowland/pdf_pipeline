@@ -14,7 +14,7 @@ MdGen supports the following elements:
 - Lists: numbers, bullets
 - pages: page
 - Links: link
-- Tables
+- Tables: table, html_table
 - importing MDSL content
 
 ## Basic Usage
@@ -130,7 +130,14 @@ InGFM markdown, the actual page blocks are ignored,
 In PDF generation, they create normal page breaks
 
 
-## Tables
+## Tables: table, html_table
+
+MdGen supports 2 table methods:
+
+- GFM Tables: table
+- HTML Tables: html_table
+
+### table
 
 Tables in Markdown can be tricky.
 You **must** have a row of '---' matching the column count of the first raow.
@@ -152,6 +159,14 @@ And here is the output:
 head1|head2
 ----|----
 cell1|cell2
+
+### html_table
+
+HTML tables get rendered as just straight HTML table tags.
+Markdown just pass any HTML through to resulting output without any changes.
+This fixes the problem with GFM needing to render the first row as the thead element.
+You just can call the 'html_table' command with the same args the 'table' command
+
 
 ## Importing MDSL content
 
