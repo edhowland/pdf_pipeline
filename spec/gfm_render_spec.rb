@@ -162,8 +162,8 @@ end
 
   describe 'html_table with 2 rows and 2 columns each' do
     subject { rend.render [
-        [  ],
-        [ ]
+        [ ['H1'], ['H2'] ],  # row 0
+        [ ['C1'], ['C2'] ] # row 1
       ] }
   end
 
