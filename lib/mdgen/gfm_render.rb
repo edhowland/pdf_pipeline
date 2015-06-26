@@ -63,7 +63,7 @@ def ol list
 
   def html_table arr
     r = Builder::XmlMarkup.new 
-    r.table { arr.each {|r| r.tr r }  } + "\n"
+    r.table { arr.each {|row| r.tr { row.each {|col| r.td col  }  } } } + "\n"
   end
 
 

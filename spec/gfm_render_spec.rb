@@ -153,4 +153,11 @@ end
 
     specify { subject.must_equal "<table></table>\n\n" }
   end
+
+  describe 'html_table with one row' do
+    subject { rend.render [[:html_table, [['H']] ]] }
+
+    specify { subject.must_equal "<table><tr><td>H</td></tr></table>\n\n" }
+  end
+
 end
