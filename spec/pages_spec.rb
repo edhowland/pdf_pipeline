@@ -34,6 +34,12 @@ end
 describe 'MdGen Pagination' do
   let(:gen) { MdGen.new }
 
+
+  describe 'empty page break with no block' do
+    subject {gen.process {page } }
+
+    specify { subject.must_equal [[:page, 1, 1]]}
+  end
   describe 'should have page method taking a block' do
     subject { gen.process { page { h1 'text' } } }
 
