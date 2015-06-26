@@ -1,7 +1,24 @@
 #!/usr/bin/env ruby
 # mdgen - cli tool to process MDSL files
 
+require 'optparse'
 require '../lib/mdgen'
+
+parser = OptionParser.new do |opts|
+  opts.on('-h', '--help', 'Displays this help') do
+    puts 'mdgen file.mdsl'
+    puts 'Mdgen will process file.mdsl and send the result to stdout.'
+    puts opts
+  exit
+  end
+
+  opts.on('-v', '--version', 'Display version tag.') do
+    puts 'mdgen v0.1'
+  exit
+  end
+end
+
+parser.parse!
 
 contents = File.read ARGV.first
 g = MdGen.new
