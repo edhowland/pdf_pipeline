@@ -61,9 +61,9 @@ def ol list
     insert_dashes(arr).map {|e| e.join('|') }.join("\n") + "\n"
   end
 
-  def html_table arr
+  def html_table arr, attrs={}
     r = Builder::XmlMarkup.new 
-    r.table { arr.each {|row| r.tr { row.each {|col| r.td col  }  } } } + "\n"
+    r.table(attrs) { arr.each {|row| r.tr { row.each {|col| r.td col  }  } } } + "\n"
   end
 
 
