@@ -66,8 +66,14 @@ describe 'MdGen: complicated examples' do
   end
 
   describe 'importing .mdsl file' do
-    subject { gen.process { import 'header.mdsl' }  }
+    subject { gen.process { import 'header.mdsl' } }
 
-  specify { subject.must_equal [[:h6, 'Report']] }
+  # specify { subject.must_equal [[:h6, 'Report']] }
+  end
+
+  describe 'eval_string' do
+    subject { gen.eval_string "h1 'head'" }
+
+    specify { subject.must_equal [[:h1, 'head']] }
   end
 end

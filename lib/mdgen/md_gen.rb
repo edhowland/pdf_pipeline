@@ -118,6 +118,10 @@ alias_method :numbers, :ordered_list
   self.instance_exec &blk
   end
 
+  def eval_string string
+    self.instance_eval string
+  end
+
   # process the block which contains the MDSL commads returning array of opcodes
 def process(&blk)
     # count pages first
