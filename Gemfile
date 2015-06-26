@@ -5,4 +5,5 @@ gem 'sqlite3'
 gem 'redcarpet'
 gem 'pdfkit'
 gem 'prawn'
+gem 'builder'
 
