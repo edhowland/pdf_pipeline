@@ -12,6 +12,10 @@ def page *args, &blk
   @page_count += 1
   end
 
+  def eval_string string
+    self.instance_eval string
+  end
+
   def process(&blk)
     self.instance_exec &blk
     @page_count
@@ -119,6 +123,7 @@ alias_method :numbers, :ordered_list
   end
 
   def eval_string string
+    @page_count = PageCounter.new.eval_string string
     self.instance_eval string
   end
 
