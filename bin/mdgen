@@ -2,7 +2,7 @@
 # mdgen - cli tool to process MDSL files
 
 require 'optparse'
-require '../lib/mdgen'
+require_relative '../lib/mdgen'
 
 parser = OptionParser.new do |opts|
   opts.on('-h', '--help', 'Displays this help') do

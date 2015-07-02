@@ -49,6 +49,7 @@ class MdGen
     headm = "h#{l}".to_sym
     @codes << [headm, string]
   yield l + 1 if block_given?
+    @codes
   end
   def h1 string
     @codes << [:h1, string]

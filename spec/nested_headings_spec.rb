@@ -69,4 +69,10 @@ end
 
     specify { subject.must_raise MdGen::NestingTooDeep }
   end
+
+  describe 'simple string heading' do
+    subject { gen.eval_string 'h 1, "head"' }
+
+    specify { subject.must_equal [[:h1, 'head']] }
+  end
 end
