@@ -26,7 +26,7 @@ def page *args, &blk
 end
 
 
-class MdGen
+class MdGen < CodeCompiler
   class NestingTooDeep < RuntimeError
 
 
