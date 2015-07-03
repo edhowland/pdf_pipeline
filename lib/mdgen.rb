@@ -1,6 +1,7 @@
 # mdgen.rb - require files from ./mdgen/
 
 require 'builder'
+require_relative 'compiler'
 require_relative 'mdgen/text_parse'
 require_relative 'mdgen/text_format'
 require_relative 'mdgen/md_gen'
