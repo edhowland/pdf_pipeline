@@ -1,7 +1,7 @@
 # mdgen.rb - MdGen class DSL to generate Markdown
 
 
-class PageCounter
+class PageCounter < CodeCompiler
   def initialize
     @page_count = 0
   end
