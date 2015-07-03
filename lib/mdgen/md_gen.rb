@@ -28,20 +28,17 @@ end
 
 class MdGen < CodeCompiler
   class NestingTooDeep < RuntimeError
-
-
     def initialize
       super('Nesting Level Too Deep')
     end
   end
 
   def initialize
-    @codes = []
+  super
   @page_count = 0
     @page_current = 0
   end
 
-  attr_reader :codes
 
   def h l,  string, &blk
      raise MdGen::NestingTooDeep if l > 6
