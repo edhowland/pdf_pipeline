@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     builder (3.2.2)
+    net-ssh (2.9.2)
     pdf-core (0.5.1)
     pdfkit (0.7.0)
     prawn (2.0.1)
@@ -16,6 +17,7 @@ PLATFORMS
 
 DEPENDENCIES
   builder
+  net-ssh
   pdfkit
   prawn
   redcarpet

@@ -109,8 +109,8 @@ alias_method :numbers, :ordered_list
     @codes << [:table, arr]
   end
 
-  def html_table arr
-    @codes << [:html_table, arr]
+  def html_table arr, options={}
+    @codes << [:html_table, arr, options]
   end
 
   # import a .mdsl file, process it and add opcodes to our @codes

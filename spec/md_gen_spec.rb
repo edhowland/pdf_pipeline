@@ -62,7 +62,13 @@ describe 'MdGen: complicated examples' do
   describe 'html_table' do
     subject { gen.process {  html_table [] } }
 
-    specify { subject.must_equal [[:html_table, []]] }
+    specify { subject.must_equal [[:html_table, [], {}]] }
+  end
+
+  describe 'html_table with attributes' do
+    subject { gen.process { html_table [], width: '10%' } }
+
+    specify { subject.must_equal [[:html_table, [], {:width => '10%'}]] }
   end
 
   describe 'importing .mdsl file' do

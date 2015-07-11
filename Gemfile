@@ -6,4 +6,5 @@ gem 'redcarpet'
 gem 'pdfkit'
 gem 'prawn'
 gem 'builder'
+gem 'net-ssh'
 
