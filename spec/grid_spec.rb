@@ -21,3 +21,12 @@ describe 'grid 2x4' do
 
   specify { grid2x4.must_equal [[nil,nil,nil,nil], [nil,nil,nil,nil]] }
 end
+
+describe 'grid 2x2 with block' do
+  subject {
+    num = 0
+    grid(2, 2) { num += 1 }
+  }
+
+  specify { subject.must_equal [[1,2], [3,4]] }
+end

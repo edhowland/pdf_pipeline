@@ -10,6 +10,12 @@ end
 
 
 # grid rows, cols - empty array of arrays
-def grid rows, cols
-  [([nil] * cols)] * rows
+def grid rows, cols, &blk
+  output = [([nil] * cols)] * rows
+
+  if block_given?
+    output.map {|row| row.map {|col| yield } }
+  else
+    output
+  end
 end
