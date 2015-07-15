@@ -74,7 +74,7 @@ describe 'MdGen: complicated examples' do
   describe 'link' do
     subject { gen.process { link('A Link', 'http://example.com') } }
 
-    specify { subject.must_equal  [[:a, 'A Link', 'http://example.com']] }
+    specify { subject.must_equal  [[:a, ['A Link', 'http://example.com']]] }
   end
 
   describe 'importing .mdsl file' do
@@ -92,6 +92,6 @@ describe 'MdGen: complicated examples' do
   describe 'eval_string link' do
     subject { gen.eval_string "link 'A link', 'http://example.com'" }
 
-    specify { subject.must_equal  [[:a, 'A link', 'http://example.com']] }
+    specify { subject.must_equal  [[:a, ['A link', 'http://example.com']]] }
   end
 end

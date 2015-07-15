@@ -96,7 +96,7 @@ alias_method :numbers, :ordered_list
   end
 
   def link title, url
-    @codes << [:a, title, url]
+    @codes << [:a, [title, url]]
   end
 
   def page(&blk)
