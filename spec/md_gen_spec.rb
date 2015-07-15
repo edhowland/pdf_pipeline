@@ -88,4 +88,10 @@ describe 'MdGen: complicated examples' do
 
     specify { subject.must_equal [[:h1, 'head']] }
   end
+
+  describe 'eval_string link' do
+    subject { gen.eval_string "link 'A link', 'http://example.com'" }
+
+    specify { subject.must_equal  [[:a, 'A link', 'http://example.com']] }
+  end
 end
