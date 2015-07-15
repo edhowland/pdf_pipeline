@@ -157,7 +157,7 @@ end
   describe 'html_table with one row' do
     subject { rend.render [[:html_table, [['H']],  {} ]] }
 
-    specify { subject.must_equal "<table><tr><td>H</td></tr></table>\n\n" }
+    specify { subject.must_equal "<table>\n<tr><td>H</td></tr></table>\n\n" }
   end
 
   describe 'html_table with 2 rows and 2 columns each' do
@@ -166,7 +166,7 @@ end
         ['C1', 'C2']  # row 1
       ], {} ]] }
 
-    specify { subject.must_equal "<table><tr><td>H1</td><td>H2</td></tr><tr><td>C1</td><td>C2</td></tr></table>\n\n"}
+    specify { subject.must_equal "<table>\n<tr><td>H1</td><td>H2</td></tr>\n<tr><td>C1</td><td>C2</td></tr></table>\n\n"}
   end
 
   describe 'html_width' do
