@@ -71,6 +71,12 @@ describe 'MdGen: complicated examples' do
     specify { subject.must_equal [[:html_table, [], {:width => '10%'}]] }
   end
 
+  describe 'link' do
+    subject { gen.process { link('A Link', 'http://example.com') } }
+
+    specify { subject.must_equal  [[:a, 'A Link', 'http://example.com']] }
+  end
+
   describe 'importing .mdsl file' do
     subject { gen.process { import 'header.mdsl' } }
 
